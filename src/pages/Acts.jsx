@@ -2,9 +2,9 @@ import Card from '../components/Card.jsx'
 import Button from '../components/Button.jsx'
 import Modal from '../components/Modal.jsx'
 import { DateInput, Input } from '../components/Inputs.jsx'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Printer, FileText, FileDown, FileSpreadsheet } from 'lucide-react'
-import generatedActs from '../mock/generated_acts.json'
+// Load acts from public/mock at runtime
 
 export default function Acts() {
   function parseEur(value) {
@@ -18,7 +18,7 @@ export default function Acts() {
     return fixed.replace('.', ',')
   }
 
-  const [acts] = useState([
+  const [acts, setActs] = useState([
     {
       id: 'act-202210121',
       number: 'Aktas202210121',
@@ -63,8 +63,21 @@ export default function Acts() {
         },
       ],
     },
-    ...generatedActs
+    // Fetched items will be appended below on mount
   ])
+
+  useEffect(() => {
+    const fetchActs = async () => {
+      try {
+        const res = await fetch('/mock/generated_acts.json')
+        const data = await res.json()
+        setActs(prev => [...prev, ...data])
+      } catch (e) {
+        console.error('Failed to load generated acts mock:', e)
+      }
+    }
+    fetchActs()
+  }, [])
 
   const [dateFrom, setDateFrom] = useState('') // YYYY-MM-DD
   const [dateTo, setDateTo] = useState('') // YYYY-MM-DD

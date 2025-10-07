@@ -7,7 +7,6 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useMemo, useState, useRef, useEffect } from 'react'
-import katalogas from '../mock/katalogas.json'
 
 import { forwardRef, useImperativeHandle } from 'react'
 import { PinGroup } from '../components/Inputs.jsx'
@@ -15,6 +14,21 @@ import { PinGroup } from '../components/Inputs.jsx'
 // PinGroup now imported from components
 
 export default function Home() {
+  const [katalogas, setKatalogas] = useState([])
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await fetch('/mock/katalogas.json')
+        const data = await res.json()
+        setKatalogas(Array.isArray(data) ? data : [])
+      } catch (e) {
+        console.error('Failed to load katalogas mock:', e)
+        setKatalogas([])
+      }
+    }
+    load()
+  }, [])
   const schema = useMemo(() => z.object({
     c1: z.string().regex(/^\d{2}$/,'2 skaitmenys'),
     c2: z.string().regex(/^\d{4}$/,'4 skaitmenys'),

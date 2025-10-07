@@ -1,12 +1,26 @@
 import Card from '../components/Card.jsx'
 import Button from '../components/Button.jsx'
 import { Select, Input } from '../components/Inputs.jsx'
-import { useMemo, useState } from 'react'
-import katalogas from '../mock/katalogas.json'
+import { useEffect, useMemo, useState } from 'react'
 
 export default function ServicesList() {
   const [searchQuery, setSearchQuery] = useState('')
   const [statusFilter, setStatusFilter] = useState('viskas') // 'viskas' | 'draudigo-patvirtintos' | 'draudiko-nepatvirtintos'
+  const [katalogas, setKatalogas] = useState([])
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await fetch('/mock/katalogas.json')
+        const data = await res.json()
+        setKatalogas(Array.isArray(data) ? data : [])
+      } catch (e) {
+        console.error('Failed to load katalogas mock:', e)
+        setKatalogas([])
+      }
+    }
+    load()
+  }, [])
 
   // Process katalogas data and add status based on TLK compensation
   const services = useMemo(() => {
@@ -36,7 +50,7 @@ export default function ServicesList() {
         status
       }
     })
-  }, [])
+  }, [katalogas])
 
   // Filter services based on search query and status filter
   const filteredServices = useMemo(() => {
