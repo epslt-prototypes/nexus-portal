@@ -8,7 +8,7 @@ import ClientTopNav from '../components/ClientTopNav'
 import Tabs from '../components/Tabs'
 import PageHeader from '../components/PageHeader'
 import ClaimCard from '../components/ClaimCard'
-import clientDataJson from '../mock/client_data.json'
+// fetching from public/mock at runtime
 
 export default function ClientPortal() {
   const [clientData, setClientData] = useState(null)
@@ -25,9 +25,19 @@ export default function ClientPortal() {
   }
 
   useEffect(() => {
-    // Load mock data bundled at build time
-    setClientData(clientDataJson)
-    setLoading(false)
+    const fetchClientData = async () => {
+      try {
+        const response = await fetch('/mock/client_data.json')
+        const data = await response.json()
+        setClientData(data)
+      } catch (error) {
+        console.error('Error fetching client data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchClientData()
   }, [])
 
   if (loading) {

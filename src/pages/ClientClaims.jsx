@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, useMemo } from 'react'
-import clientDataJson from '../mock/client_data.json'
+// fetching from public/mock at runtime
 import ClientTopNav from '../components/ClientTopNav'
 import { useLocation } from 'react-router-dom'
 import { ThemeContext } from '../theme/ThemeProvider'
@@ -37,9 +37,19 @@ export default function ClientClaims() {
   }
 
   useEffect(() => {
-    // Load mock data bundled at build time
-    setClientData(clientDataJson)
-    setLoading(false)
+    const fetchClientData = async () => {
+      try {
+        const response = await fetch('/mock/client_data.json')
+        const data = await response.json()
+        setClientData(data)
+      } catch (error) {
+        console.error('Error fetching client data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchClientData()
   }, [])
 
   if (loading) {
