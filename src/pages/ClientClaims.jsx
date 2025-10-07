@@ -51,6 +51,15 @@ export default function ClientClaims() {
     load()
   }, [])
 
+  // Ensure all hooks run before any conditional returns
+  const pendingSource = clientData?.pendingClaims ?? []
+  const reimbursementsSource = clientData?.reimbursements ?? []
+
+  const allClaims = useMemo(() => [
+    ...pendingSource.map(claim => ({ ...claim, type: 'pending' })),
+    ...reimbursementsSource.map(reimb => ({ ...reimb, type: 'completed' }))
+  ].sort((a, b) => new Date(b.date) - new Date(a.date)), [pendingSource, reimbursementsSource])
+
   if (loading) {
     return (
       <div className="min-h-screen bg-surface-muted flex items-center justify-center">
@@ -118,11 +127,6 @@ export default function ClientClaims() {
         return status
     }
   }
-
-  const allClaims = useMemo(() => [
-    ...pendingClaims.map(claim => ({ ...claim, type: 'pending' })),
-    ...reimbursements.map(reimb => ({ ...reimb, type: 'completed' }))
-  ].sort((a, b) => new Date(b.date) - new Date(a.date)), [pendingClaims, reimbursements])
 
   const pendingClaimsList = allClaims.filter(claim => claim.status === 'processing' || claim.status === 'pending')
   const completedClaimsList = allClaims.filter(claim => claim.status === 'completed')
