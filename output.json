@@ -1,0 +1,2132 @@
+[
+  {
+    "code": "OPT20",
+    "name": "Paslauga OPT20",
+    "unitPrice": "16,32",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "VAK01",
+    "name": "Vakcina nuo gripo",
+    "unitPrice": "24,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "AMBULAT_KOMP4",
+    "name": "Paslauga AMBULAT_KOMP4",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "AMBULAT_KOMP5",
+    "name": "Paslauga \tAMBULAT_KOMP4",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "SERV1",
+    "name": "Service 1 Test",
+    "unitPrice": "10,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "SERV2",
+    "name": "Service 2 Test",
+    "unitPrice": "30,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "0,01",
+    "validFrom": "2024-05-02",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "SERV3",
+    "name": "Service 3 Test",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "0,02",
+    "validFrom": "2024-05-02",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "SERV4",
+    "name": "Service 4 Test",
+    "unitPrice": "10,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,03",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "SERV5",
+    "name": "Service 5 Test",
+    "unitPrice": "250,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,04",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "SERV6",
+    "name": "Service 6 Test",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "0,05",
+    "validFrom": "2024-05-02",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "SERV7",
+    "name": "Service 7 Test",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "11,00",
+    "tlkCompensation": "0,06",
+    "validFrom": "2024-05-02",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "55555",
+    "name": "Paslauga 55555",
+    "unitPrice": "15,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2025-02-14",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "jgjghj",
+    "name": "ghjghjg",
+    "unitPrice": "15,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2025-04-01",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "ZV20",
+    "name": "Endometro paruošimas prieš pagalbinio apvaisinimo procedūrą",
+    "unitPrice": "65,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV21",
+    "name": "Užšaldytos spermos saugojimas papildomai 2 metus",
+    "unitPrice": "175,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV22",
+    "name": "Embriono skaidriojo dangalo suploninimas (“Assisted hatching”)",
+    "unitPrice": "380,00",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "4,96",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV23",
+    "name": "Užšaldytų embrionų saugojimas papildomai 2 metus",
+    "unitPrice": "235,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "SV1",
+    "name": "Paslauga SV1",
+    "unitPrice": "10,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-10-17",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "VAISTAI VITAMINAI",
+    "name": "Vaistai vitaminai",
+    "unitPrice": "21,00",
+    "vatRate": "21,00",
+    "discountPercent": "15,00",
+    "tlkCompensation": "5,00",
+    "validFrom": "2017-02-09",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "M79.69",
+    "name": "Galūnės skausmas, nepatikslintos vietos",
+    "unitPrice": "21,00",
+    "vatRate": "21,00",
+    "discountPercent": "15,00",
+    "tlkCompensation": "5,00",
+    "validFrom": "2017-02-09",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "StacV66",
+    "name": "Važiuojantysis sunkiąja transporto priemone,",
+    "unitPrice": "25,00",
+    "vatRate": "21,00",
+    "discountPercent": "15,00",
+    "tlkCompensation": "10,00",
+    "validFrom": "2017-03-20",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Test20",
+    "name": "Paslauga Test20",
+    "unitPrice": "15,37",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2018-10-15",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "AB15",
+    "name": "Gydytojo dermatologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "1,02",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "AB150",
+    "name": "Trumpa gydytojo dermatologo konsultacija",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "1,04",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "AB226",
+    "name": "Gydytojo radiologo konsultacija vaikams su kompensacija",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "1,06",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "AB019",
+    "name": "Gydymo paskyrimas, tyrimo komentavimas",
+    "unitPrice": "12,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "1,10",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "AB020",
+    "name": "Tyrimu paskyrimas ir komentavimas del operacijos",
+    "unitPrice": "12,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "REAB11",
+    "name": "Paslaugas REAB_STD",
+    "unitPrice": "18,55",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-04-30",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "REAB12",
+    "name": "Paslauga REAB_SVEIK",
+    "unitPrice": "18,96",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "REAB14",
+    "name": "Paslauga REAB_GYD",
+    "unitPrice": "21,25",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT11",
+    "name": "Paslauga OPT_STD",
+    "unitPrice": "14,52",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT12",
+    "name": "Paslauga OPT_REM",
+    "unitPrice": "24,12",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "DABT11",
+    "name": "Paslauga DABT",
+    "unitPrice": "54,78",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "KRITD11",
+    "name": "Paslauga KRITD_STD",
+    "unitPrice": "25,48",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "BA529",
+    "name": "Paslauga BA529",
+    "unitPrice": "56,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-06-12",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "A112",
+    "name": "Akiniai korekciniai",
+    "unitPrice": "250,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-06-25",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "BA502",
+    "name": "Akiniai nuo saulės",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-06-25",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "BA704",
+    "name": "Paslauga BA704",
+    "unitPrice": "2,48",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-06-26",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "BA850",
+    "name": "Pasluga BA850",
+    "unitPrice": "14,56",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2019-06-27",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Testas210427",
+    "name": "Paslauga \t Testas210427",
+    "unitPrice": "25,16",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "0,15",
+    "validFrom": "2021-04-27",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "123333333333333333",
+    "name": "huikjik",
+    "unitPrice": "15,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2021-04-27",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Testas8",
+    "name": "Paslauga Testas",
+    "unitPrice": "10,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-10-01",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "ABS01",
+    "name": "Kolsultacija",
+    "unitPrice": "30,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2021-04-01",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "N011",
+    "name": "PliusAMB",
+    "unitPrice": "30,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2021-04-01",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "N044",
+    "name": "Nėštumas",
+    "unitPrice": "30,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2021-04-01",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "N055",
+    "name": "ChirurgAmb",
+    "unitPrice": "30,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2021-04-01",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "N066",
+    "name": "StacPlius",
+    "unitPrice": "15,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2021-04-01",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "Stac_Plius1",
+    "name": "Paslauga Stac_Plius1",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-02-03",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga1",
+    "name": "Paslauga1 REAB_STD",
+    "unitPrice": "12,45",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-05-09",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga2",
+    "name": "Paslauga2 DARB_STD",
+    "unitPrice": "25,14",
+    "vatRate": "21,00",
+    "discountPercent": "0,45",
+    "tlkCompensation": "15,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga3",
+    "name": "Paslauga3  SVEIK_KITA",
+    "unitPrice": "95,16",
+    "vatRate": "0,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "3,18",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga4",
+    "name": "Paslauga4 OPT_REM",
+    "unitPrice": "35,48",
+    "vatRate": "0,00",
+    "discountPercent": "1,28",
+    "tlkCompensation": "5,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga5",
+    "name": "Paslauga5  DABT_IML",
+    "unitPrice": "250,00",
+    "vatRate": "0,00",
+    "discountPercent": "10,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga6",
+    "name": "Paslauga6 DABT_BRK",
+    "unitPrice": "75,85",
+    "vatRate": "0,00",
+    "discountPercent": "10,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga7",
+    "name": "Paslauga7 KRITG_STD",
+    "unitPrice": "22,78",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga8",
+    "name": "Paslauga8 AMB STAC REAB",
+    "unitPrice": "27,14",
+    "vatRate": "0,00",
+    "discountPercent": "12,00",
+    "tlkCompensation": "1,22",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga9",
+    "name": "Paslauga9 STAC",
+    "unitPrice": "16,14",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga10",
+    "name": "Paslauga10 OPT",
+    "unitPrice": "16,78",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Paslauga11",
+    "name": "Paslauga11 NE",
+    "unitPrice": "24,18",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-05-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "EMED1",
+    "name": "Paslauga EMED1",
+    "unitPrice": "36,45",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2022-11-18",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "bbjjhjh",
+    "name": "vzvzvcv",
+    "unitPrice": "5,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-01",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "P04680",
+    "name": "Myobrace funkcinis aparatas (1 vnt.)",
+    "unitPrice": "170,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06600",
+    "name": "Gydytojo oftalmologo konsultacija",
+    "unitPrice": "85,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06610",
+    "name": "Gydytojo oftalmologo pakartotinė konsultacija",
+    "unitPrice": "59,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06616",
+    "name": "Gydytojo oftalmologo konsultacija + gydymo plano aptarimas nuotoliniu būdu",
+    "unitPrice": "110,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06640",
+    "name": "Gydytojo oftalmologo dr. D. Aukštikalnio konsultacija",
+    "unitPrice": "100,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06650",
+    "name": "Gydytojo oftalmologo dr. D. Aukštikalnio pakartotinė konsultacija",
+    "unitPrice": "70,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06660",
+    "name": "Gydytojos oftalmologės G. Sirvydytės konsultacija",
+    "unitPrice": "90,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06670",
+    "name": "Gydytojos oftalmologės G. Sirvydytės pakartotinė konsultacija",
+    "unitPrice": "65,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06680",
+    "name": "Gydytojo oftalmologo konsultacija ir OCT tyrimas prieš Avastin injekciją",
+    "unitPrice": "0,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06700",
+    "name": "Gydytojo oftalmologo trumpa konsultacija",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06710",
+    "name": "Gydytojo konsultacija (TLK standartas)",
+    "unitPrice": "0,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06730",
+    "name": "Akies echoskopija",
+    "unitPrice": "32,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06750",
+    "name": "Akies tinklainės fotografavimas",
+    "unitPrice": "32,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06770",
+    "name": "Akispūdžio matavimas",
+    "unitPrice": "12,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06780",
+    "name": "Akispūdžio matavimas (programa)",
+    "unitPrice": "0,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06790",
+    "name": "Akių dugno tyrimas",
+    "unitPrice": "32,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06800",
+    "name": "Ašarų osmoliariškumo tyrimas",
+    "unitPrice": "32,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06810",
+    "name": "Ašarų plėvelės analizė",
+    "unitPrice": "32,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06820",
+    "name": "Autokeratorefraktometrija",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "P06830",
+    "name": "Egzoftalmometrija",
+    "unitPrice": "12,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-06-15",
+    "validTo": "2099-01-01"
+  },
+  {
+    "code": "Pasl1",
+    "name": "Gydytojo dermatologo konsultacija",
+    "unitPrice": "11,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "1,02",
+    "validFrom": "2023-09-05",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "Ambulat_Kard",
+    "name": "Paslauga Ambulat_Kard",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-10-26",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Ambulat_Nrth",
+    "name": "Paslauga Ambulat_Nrth",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-10-26",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Ambulat_Sk",
+    "name": "Paslauga Ambulat_Sk",
+    "unitPrice": "30,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-10-26",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Ambulat_Affd",
+    "name": "Paslauga Ambulat_Affd",
+    "unitPrice": "40,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-10-26",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Ambulat_Spec",
+    "name": "Paslauga Ambulat_Spec",
+    "unitPrice": "40,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-10-26",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "AMBULAT_KOMP1",
+    "name": "Paslauga AMBULAT_KOMP1",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-11-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "AMBULAT_KOMP2",
+    "name": "Paslauga AMBULAT_KOMP2",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-11-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "AMBULAT_KOMP3",
+    "name": "Paslauga AMBULAT_KOMP3",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-11-10",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "22063",
+    "name": "Paslauga 22063",
+    "unitPrice": "20,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2023-12-13",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT71",
+    "name": "Paslauga OPT1",
+    "unitPrice": "40,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-02-23",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT72",
+    "name": "Paslauga OPT72",
+    "unitPrice": "60,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-02-23",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT73",
+    "name": "Paslauga OPT73",
+    "unitPrice": "60,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-02-23",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "KRITG11",
+    "name": "Paslauga KRITG_STD",
+    "unitPrice": "26,89",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "NESC11",
+    "name": "Paslauga NESC_STD",
+    "unitPrice": "21,48",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "PROFIL11",
+    "name": "Paslauga PROFIL_STD",
+    "unitPrice": "24,78",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "SVEIK11",
+    "name": "Paslauga SVEIK_STD",
+    "unitPrice": "15,29",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "VAKCIN11",
+    "name": "Paslauga VAKCIN_",
+    "unitPrice": "14,99",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Test AG",
+    "name": "Paslauga Test AG_SVEIK",
+    "unitPrice": "12,45",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Test AG_OPT",
+    "name": "Paslauga AG OPT",
+    "unitPrice": "15,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Test AG_KOSM",
+    "name": "Paslauga  AG_KOSM",
+    "unitPrice": "16,55",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Test AG_STD",
+    "name": "Paslauga AG_STD",
+    "unitPrice": "16,99",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT3",
+    "name": "Paslauga OPT3",
+    "unitPrice": "15,46",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Test Ambulat_STD",
+    "name": "Paslauga Ambulat_STD",
+    "unitPrice": "15,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Test SPORT",
+    "name": "Paslauga Test SPORT",
+    "unitPrice": "16,45",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "Optika_5",
+    "name": "Paslauga Optika 5",
+    "unitPrice": "16,85",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT115",
+    "name": "Paslauga OPT115",
+    "unitPrice": "15,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "BA526",
+    "name": "Botulino toksino injekcijos",
+    "unitPrice": "90,00",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "OPT17",
+    "name": "Paslauga OPT17",
+    "unitPrice": "14,15",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "REAB17",
+    "name": "Paslauga REAB 17",
+    "unitPrice": "7,85",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "REAB18",
+    "name": "Paslauga REAB18",
+    "unitPrice": "5,74",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "KOSM1",
+    "name": "Paslauga KOSM1",
+    "unitPrice": "5,68",
+    "vatRate": "0,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2024-05-02",
+    "validTo": "2099-12-31"
+  },
+  {
+    "code": "GT150",
+    "name": "Trumpa gydytojo dermatologo konsultacija",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "1,04",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT226",
+    "name": "Gydytojo radiologo konsultacija vaikams su kompensacija",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "1,06",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT",
+    "name": "Pakartotinė šeimos  gydytojo konsultacija",
+    "unitPrice": "30,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "1,08",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT019",
+    "name": "Gydymo paskyrimas, tyrimo komentavimas",
+    "unitPrice": "12,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "1,10",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT09",
+    "name": "Gydytojo otorinolaringologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "11,00",
+    "tlkCompensation": "1,22",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT093",
+    "name": "Gydytojo otorinolaringologo konsultacija vairuotojams",
+    "unitPrice": "25,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT11",
+    "name": "Gydytojo akušerio-ginekologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "1,32",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT1100",
+    "name": "Gydytojo specialisto konsultacija skubos tvarka.",
+    "unitPrice": "95,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "1,36",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT112",
+    "name": "Gydytojo akušerio-ginekologo Med. Dr. konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "1,38",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT113",
+    "name": "Pakartotinė gydytojo akušerio- ginekologo Med. Dr. konsultacija",
+    "unitPrice": "35,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "1,40",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT12",
+    "name": "Gydytojo urologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "1,42",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT13",
+    "name": "Gydytojo gastroenterologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "1,44",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT132",
+    "name": "Transrektalinė prostatos biopsija pagal programą (8)",
+    "unitPrice": "165,00",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "1,46",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT141",
+    "name": "Gydytojo neurologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "1,48",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT16",
+    "name": "Gydytojo kardiologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "1,50",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT173",
+    "name": "Gydytojo endokrinologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "9,00",
+    "tlkCompensation": "1,52",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT18",
+    "name": "Gydytojo chirurgo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "10,00",
+    "tlkCompensation": "1,54",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT181",
+    "name": "Estetinės plastinės chirurgijos gydytojo chirurgo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "11,00",
+    "tlkCompensation": "1,56",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT19",
+    "name": "Gydytojo ortopedo-traumatologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "12,00",
+    "tlkCompensation": "1,58",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT195",
+    "name": "Gydytojo ortopedo-traumatologo (med. dr.) konsultacija",
+    "unitPrice": "71,00",
+    "vatRate": "21,00",
+    "discountPercent": "13,00",
+    "tlkCompensation": "1,60",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT312",
+    "name": "Gydytojo ortopedo-traumatologo (profesoriaus) konsultacija",
+    "unitPrice": "93,00",
+    "vatRate": "21,00",
+    "discountPercent": "14,00",
+    "tlkCompensation": "1,62",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT21",
+    "name": "Gydytojo echoskopuotojo konsultacija",
+    "unitPrice": "10,00",
+    "vatRate": "21,00",
+    "discountPercent": "15,00",
+    "tlkCompensation": "1,64",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT22",
+    "name": "Gydytojo endoskopuotojo konsultacija",
+    "unitPrice": "10,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "1,66",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT221",
+    "name": "Gydytojo radiologo konsultacija",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "1,68",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT222",
+    "name": "Gydytojo mamologo konsultacija",
+    "unitPrice": "55,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "1,70",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT225",
+    "name": "Šeimos gydytojo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "1,76",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT227",
+    "name": "šeimos gydytojo konsultacija dėl 1 skiepo",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "1,78",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT228",
+    "name": "šeimos gydytojo konsultacija dėl kelių skiepų",
+    "unitPrice": "18,00",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "1,80",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT23",
+    "name": "Vaikų neurologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "1,82",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT24",
+    "name": "Vaikų kardiologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "1,84",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT26",
+    "name": "Vaikų oftalmologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "9,00",
+    "tlkCompensation": "1,86",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT27",
+    "name": "Vaikų chirurgo konsultacija",
+    "unitPrice": "48,00",
+    "vatRate": "21,00",
+    "discountPercent": "10,00",
+    "tlkCompensation": "1,88",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT30",
+    "name": "Gydytojo reumatologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "12,00",
+    "tlkCompensation": "1,92",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT31",
+    "name": "Gydytojo neonatologo konsultacija (prof. habil. Dr.)",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "13,00",
+    "tlkCompensation": "1,94",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT32",
+    "name": "Gydytojo dietologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "14,00",
+    "tlkCompensation": "1,96",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT322",
+    "name": "Gydytojo dietologo gydymo paskyrimas (valgiaraščio sudarymas)",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "15,00",
+    "tlkCompensation": "1,98",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT343",
+    "name": "Kraujagyslių chirurgo Med. Dr. konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "2,02",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT35",
+    "name": "Gydytojo alergologo konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "2,04",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT6",
+    "name": "Chirurgo, plaštakos chirurgo, ortopedo-traumatologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "2,06",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT92",
+    "name": "Gydytojo chirurgo konsultacija dėl botulino",
+    "unitPrice": "18,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "2,08",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT921",
+    "name": "Gydytojo ortopedo - traumotologo konsultacija prieš operaciją",
+    "unitPrice": "30,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "2,10",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT927",
+    "name": "Trumpa plastikos chirurgo konsultacija",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "2,12",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT93",
+    "name": "Gydytojo psichiatro konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "2,14",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT930",
+    "name": "Gyd.urologo konsultacija su echoskopija",
+    "unitPrice": "65,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "2,16",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT931",
+    "name": "Trumpa gydytojo dermatologo konsultacija",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "2,18",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT933",
+    "name": "Pakartotinė gydytojo psichiatro konsultacija",
+    "unitPrice": "33,00",
+    "vatRate": "21,00",
+    "discountPercent": "9,00",
+    "tlkCompensation": "2,20",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT939",
+    "name": "Krūtų onkochirurgo konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "10,00",
+    "tlkCompensation": "2,22",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT94",
+    "name": "Gydytojo neurochirurgo konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "11,00",
+    "tlkCompensation": "2,24",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT98",
+    "name": "Gydytojo proktologo konsultacija (suaugusiems)",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "12,00",
+    "tlkCompensation": "2,26",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT99",
+    "name": "Proktologo konsultacija su rektoskopija (suaug)",
+    "unitPrice": "85,00",
+    "vatRate": "21,00",
+    "discountPercent": "13,00",
+    "tlkCompensation": "2,28",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT991",
+    "name": "Naujagimio priežiūra mieste",
+    "unitPrice": "104,00",
+    "vatRate": "21,00",
+    "discountPercent": "14,00",
+    "tlkCompensation": "2,30",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT992",
+    "name": "Gydytojo neurologo med.m.dr. konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "15,00",
+    "tlkCompensation": "2,32",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT993",
+    "name": "Gydytojo otorinolaringologo, med.m.dr. konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "2,34",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "CH041",
+    "name": "Gydytojo chirurgo konsultacija pakartotinai (chirurgijos centre)",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "2,36",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "CH185",
+    "name": "Gydytojo chirurgo konsultacija (chirurgijos centre)",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "2,38",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT084",
+    "name": "Gydytojo oftalmologo konsultacija nėščioms",
+    "unitPrice": "89,39",
+    "vatRate": "21,00",
+    "discountPercent": "15,00",
+    "tlkCompensation": "2,18",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "GT190",
+    "name": "Gydytojo ortopedo-traumatologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "2,42",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "RE01",
+    "name": "Fizinės medicinos ir reabilitacijos gydytojo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "2,44",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "RE02",
+    "name": "Fizinės reabilitacijos gydytojo programos sudarymas",
+    "unitPrice": "15,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "2,46",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ01",
+    "name": "Ginekologo konsultacija",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ02",
+    "name": "Pakartotina/trumpa ginekologo konsultacija",
+    "unitPrice": "35,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ03",
+    "name": "Nevaisingumo gydymo (folikulų brendimo) stebėjimas",
+    "unitPrice": "35,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ04",
+    "name": "Transvaginalinė echoskopija",
+    "unitPrice": "30,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ05",
+    "name": "Vaisiaus echoskopija (nėštumo metu)",
+    "unitPrice": "35,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "1,25",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ06",
+    "name": "Vaisiaus kardiotokografija",
+    "unitPrice": "22,00",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ07",
+    "name": "Atsakymų komentaras, gydymo paskyrimas",
+    "unitPrice": "16,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ08",
+    "name": "Kolposkopija",
+    "unitPrice": "59,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ09",
+    "name": "Gimdos spiralės„MIRENA“  įdėjimas",
+    "unitPrice": "59,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "2,39",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ10",
+    "name": "Gimdos spiralės įdėjimas",
+    "unitPrice": "45,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ11",
+    "name": "Gimdos spiralės pašalinimas",
+    "unitPrice": "25,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ12",
+    "name": "Makšties svetimkūnio išėmimas",
+    "unitPrice": "25,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "2,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ13",
+    "name": "Gimdos kaklelio polipo pašalinimas (be histologijos)",
+    "unitPrice": "74,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ14",
+    "name": "Gimdos kaklelio įvertinimas ultragarsu (nėštumo metu)",
+    "unitPrice": "17,00",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ15",
+    "name": "Histerosalpingograma (radiografinis įvertinimas)",
+    "unitPrice": "114,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "5,65",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ16",
+    "name": "Histerosalpingograma (ultragarsinis ivertinimas)",
+    "unitPrice": "133,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "7,85",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ17",
+    "name": "Gydytojo endokrinologo andrologo konsultacija",
+    "unitPrice": "50,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ18",
+    "name": "Transabdominė moteriškų genitalijų echoskopija",
+    "unitPrice": "35,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "2,01",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ19",
+    "name": "Gydytojo endokrinologo andrologo pakartotina konsultacija",
+    "unitPrice": "35,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "3,15",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ20",
+    "name": "Gydytojo endokrinologo andrologo atliekama echoskopija",
+    "unitPrice": "30,00",
+    "vatRate": "21,00",
+    "discountPercent": "4,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZZ22",
+    "name": "Ginekologo konsultacija skubos tvarka",
+    "unitPrice": "90,50",
+    "vatRate": "21,00",
+    "discountPercent": "6,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV01",
+    "name": "Intrauterininė inseminacija (IUI)",
+    "unitPrice": "175,00",
+    "vatRate": "21,00",
+    "discountPercent": "7,00",
+    "tlkCompensation": "2,85",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV02",
+    "name": "Intrauterininė inseminacija (IUI) to paties ciklo metu",
+    "unitPrice": "135,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "3,47",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV03",
+    "name": "Apvaisinimas mėgintuvėlyje (IVF)",
+    "unitPrice": "122,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "10,52",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV031",
+    "name": "Apvaisinimas mėgintuvėlyje (IVF-1),",
+    "unitPrice": "122,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "15,68",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV04",
+    "name": "Intracitoplazminė spermatozoido injekcija (ICSI) + IVF",
+    "unitPrice": "174,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "12,45",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV05",
+    "name": "PICSI + ICSI + IVF",
+    "unitPrice": "197,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV06",
+    "name": "Kiaušidžių punkcija negavus kiaušialąsčių",
+    "unitPrice": "435,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV07",
+    "name": "Embrionų atšildymas ir patalpinimas",
+    "unitPrice": "495,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV08",
+    "name": "Embrionų šaldymas (vitrifikacija) ir saugojimas 2 metus",
+    "unitPrice": "350,00",
+    "vatRate": "21,00",
+    "discountPercent": "12,00",
+    "tlkCompensation": "1,25",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV09",
+    "name": "Spermos užšaldymas ir saugojimas 2 metus",
+    "unitPrice": "235,00",
+    "vatRate": "21,00",
+    "discountPercent": "14,00",
+    "tlkCompensation": "1,45",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV10",
+    "name": "Spermatozoidų aspiracija iš sėklidžių (TESA)",
+    "unitPrice": "495,00",
+    "vatRate": "21,00",
+    "discountPercent": "0,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV11",
+    "name": "Spermograma (pilnas tyrimas)",
+    "unitPrice": "55,00",
+    "vatRate": "21,00",
+    "discountPercent": "1,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV12",
+    "name": "Spermograma (trumpas tyrimas)",
+    "unitPrice": "30,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV13",
+    "name": "Blastocistų auginimas ir patalpinimas",
+    "unitPrice": "290,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV14",
+    "name": "Testas po sueities",
+    "unitPrice": "25,00",
+    "vatRate": "21,00",
+    "discountPercent": "5,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV15",
+    "name": "Apvaisinimas mėgintuvėlyje (IVF) natūraliame cikle",
+    "unitPrice": "870,00",
+    "vatRate": "21,00",
+    "discountPercent": "8,00",
+    "tlkCompensation": "1,48",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV16",
+    "name": "Apvaisinimas mėgintuvėlyje (IVF) nesidalijant embrionams",
+    "unitPrice": "870,00",
+    "vatRate": "21,00",
+    "discountPercent": "9,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV17",
+    "name": "Intrauterininė tuboperitonealinė inseminacija (IUTPI)",
+    "unitPrice": "220,00",
+    "vatRate": "21,00",
+    "discountPercent": "10,00",
+    "tlkCompensation": "2,15",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV18",
+    "name": "Intrauterininė inseminacija pagal EVIE",
+    "unitPrice": "495,00",
+    "vatRate": "21,00",
+    "discountPercent": "2,00",
+    "tlkCompensation": "0,00",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  },
+  {
+    "code": "ZV19",
+    "name": "Kiaušialąsčių šaldymas ir saugojimas 2 metus",
+    "unitPrice": "435,00",
+    "vatRate": "21,00",
+    "discountPercent": "3,00",
+    "tlkCompensation": "4,78",
+    "validFrom": "2016-02-07",
+    "validTo": "2059-01-01"
+  }
+]

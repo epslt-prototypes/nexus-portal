@@ -1,0 +1,115 @@
+{
+  "client": {
+    "id": "CLI001",
+    "name": "Jonas Jonaitis",
+    "policyNumber": "POL-2024-001234",
+    "insuranceType": "Health Insurance",
+    "memberSince": "2022-03-15"
+  },
+  "insuranceBalance": {
+    "totalLimit": 5000.00,
+    "usedAmount": 1250.75,
+    "remainingAmount": 3749.25,
+    "currency": "EUR",
+    "renewalDate": "2026-01-01"
+  },
+  "reimbursements": [
+    {
+      "id": "REIMB001",
+      "date": "2024-01-15",
+      "amount": 45.50,
+      "status": "completed",
+      "description": "Doctor consultation - General Medicine",
+      "category": "Medical Consultation",
+      "receiptNumber": "RCP-2024-001"
+    },
+    {
+      "id": "REIMB002", 
+      "date": "2024-01-10",
+      "amount": 120.00,
+      "status": "completed",
+      "description": "Prescription medication - Antibiotics",
+      "category": "Prescription Drugs",
+      "receiptNumber": "RCP-2024-002"
+    },
+    {
+      "id": "REIMB003",
+      "date": "2024-01-08",
+      "amount": 85.25,
+      "status": "completed", 
+      "description": "Laboratory tests - Blood work",
+      "category": "Diagnostic Tests",
+      "receiptNumber": "RCP-2024-003"
+    },
+    {
+      "id": "REIMB004",
+      "date": "2024-01-05",
+      "amount": 200.00,
+      "status": "completed",
+      "description": "Dental treatment - Cleaning and checkup",
+      "category": "Dental Care",
+      "receiptNumber": "RCP-2024-004"
+    },
+    {
+      "id": "REIMB005",
+      "date": "2024-01-03",
+      "amount": 300.00,
+      "status": "completed",
+      "description": "Specialist consultation - Cardiology",
+      "category": "Specialist Care",
+      "receiptNumber": "RCP-2024-005"
+    },
+    {
+      "id": "REIMB006",
+      "date": "2024-01-01",
+      "amount": 500.00,
+      "status": "completed",
+      "description": "Emergency room visit",
+      "category": "Emergency Care",
+      "receiptNumber": "RCP-2024-006"
+    }
+  ],
+  "pendingClaims": [
+    {
+      "id": "CLAIM001",
+      "date": "2024-01-20",
+      "amount": 75.00,
+      "status": "processing",
+      "description": "Physical therapy session",
+      "category": "Rehabilitation",
+      "submittedDate": "2024-01-21"
+    }
+  ],
+  "coverageDetails": {
+    "medicalConsultations": {
+      "limit": 500.00,
+      "used": 245.50,
+      "remaining": 254.50
+    },
+    "prescriptionDrugs": {
+      "limit": 1000.00,
+      "used": 120.00,
+      "remaining": 880.00
+    },
+    "diagnosticTests": {
+      "limit": 800.00,
+      "used": 85.25,
+      "remaining": 714.75
+    },
+    "dentalCare": {
+      "limit": 300.00,
+      "used": 200.00,
+      "remaining": 100.00
+    },
+    "emergencyCare": {
+      "limit": 2000.00,
+      "used": 500.00,
+      "remaining": 1500.00
+    },
+    "specialistCare": {
+      "limit": 1000.00,
+      "used": 300.00,
+      "remaining": 700.00
+    }
+  }
+}

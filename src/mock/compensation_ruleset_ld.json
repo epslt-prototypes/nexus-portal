@@ -1,0 +1,82 @@
+{
+  "compensation_logic": {
+    "input_type": {
+      "ATC_code_provided": {
+        "ATC_code_exists_in_db": {
+          "recepto_and_TLK_flags": {
+            "0_0": "Check subrizika",
+            "1_1": "Check subrizika",
+            "1_0": "Check subrizika",
+            "0_1": "No compensation"
+          },
+          "subrizika_limit_check": {
+            "has_limit": "Compensate from subrizika",
+            "no_limit": "Compensate from risk",
+            "limit_exhausted": "Fallback to PMP_VL → PMP_BL → PMP_VBR",
+            "no_subrizika": "No compensation"
+          }
+        },
+        "ATC_code_not_in_db": {
+          "parent_group_exists": {
+            "recepto_and_TLK_flags": {
+              "0_0": "Check subrizika",
+              "1_1": "Check subrizika",
+              "1_0": "Check subrizika",
+              "0_1": "No compensation"
+            },
+            "subrizika_limit_check": {
+              "has_limit": "Compensate from subrizika",
+              "no_limit": "Compensate from risk",
+              "limit_exhausted": "Fallback to PMP_VL → PMP_BL → PMP_VBR",
+              "no_subrizika": "No compensation"
+            }
+          },
+          "no_parent_group": "No compensation"
+        }
+      },
+      "TLK_code_provided": {
+        "TLK_code_in_PMP_and_other_risks": {
+          "has_common_group": "Compensate from common group",
+          "multiple_groups": "GĮD selects group",
+          "no_common_group": "No compensation",
+          "fallback": "If risk exhausted → fallback to PMP subrizikos"
+        },
+        "TLK_code_in_other_risks_only": {
+          "has_common_group": "Compensate from risk",
+          "no_common_group": "No compensation"
+        },
+        "TLK_code_in_PMP_only": {
+          "subrizika_check": {
+            "has_limit": "Compensate from subrizika",
+            "no_limit": "Compensate from PMP",
+            "limit_exhausted": "Fallback to PMP_VL → PMP_BL",
+            "no_subrizika": "No compensation"
+          }
+        }
+      },
+      "manual_entry": {
+        "risk_code_provided": {
+          "risk_has_subrizika": {
+            "subrizika_has_limit": "Compensate from subrizika",
+            "subrizika_no_limit": "Compensate from PMP",
+            "limit_exhausted": "Fallback to PMP_VL → PMP_BL",
+            "no_subrizika": "No compensation"
+          },
+          "no_subrizika": "Compensate from risk"
+        },
+        "no_risk_code": "No compensation"
+      }
+    },
+    "service_limit_check": {
+      "limit_equals_zero": "No compensation",
+      "limit_gt_zero_and_quantity_gt_limit": "Partial compensation",
+      "limit_gt_zero_and_quantity_le_limit": "Full compensation"
+    },
+    "fallback_chain": [
+      "PMP_VL",
+      "PMP_BL",
+      "PMP_IL",
+      "PMP_VBR"
+    ]
+  }
+}

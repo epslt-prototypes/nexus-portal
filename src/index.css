@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-primary: #ED1C24; /* BTA default */
+    --brand-primary-rgb: 237, 28, 36;
+    --brand-primary-dark: #ED1C24;
+    --brand-light: #FDEBEC;
+    --brand-secondary: #ED1C24;
+  }
+  .theme-bta {
+    --brand-primary: #ED1C24;
+    --brand-primary-rgb: 237, 28, 36;
+    --brand-primary-dark: #ED1C24;
+    --brand-light: #FDEBEC;
+    --brand-secondary: #ED1C24;
+  }
+  .theme-ld {
+    --brand-primary: #4C2278;
+    --brand-primary-rgb: 76, 34, 120;
+    --brand-primary-dark: #4C2278;
+    --brand-light: #F8F1FF;
+    --brand-secondary: #d1278d;
+  }
+  .theme-ergo {
+    --brand-primary: #E30613;
+    --brand-primary-rgb: 227, 6, 19;
+    --brand-primary-dark: #C1000E;
+    --brand-light: #FDECEF;
+    --brand-secondary: #E30613;
+  }
+  .theme-compensa {
+    --brand-primary: #00A651;
+    --brand-primary-rgb: 0, 166, 81;
+    --brand-primary-dark: #008C45;
+    --brand-light: #EAF7F0;
+    --brand-secondary: #A6CE39;
+  }
+  html {
+    font-family: theme(fontFamily.sans);
+  }
+  body {
+    @apply bg-surface-muted text-gray-900 antialiased;
+  }
+  /* Typography scale */
+  h1 { @apply text-2xl md:text-3xl font-bold leading-tight; }
+  h2 { @apply text-xl md:text-2xl font-semibold leading-snug; }
+  h3 { @apply text-lg md:text-xl font-semibold; }
+  .text-body { @apply text-base; }
+  .text-label { @apply text-sm text-gray-500; }
+  p, label, input, button { @apply leading-7; }
+}
+
+@layer components {
+  .focus-ring { @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted; }
+  .focus-ring:focus-visible { --tw-ring-color: var(--brand-secondary); }
+  .card { @apply rounded-xl bg-white ring-1 ring-black/5 shadow-card; }
+  .card-section { @apply px-6 py-5; }
+  .badge { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium; }
+  .badge-success { @apply badge bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200; }
+  .badge-danger { @apply badge bg-red-50 text-red-700 ring-1 ring-red-200; }
+  .input-chunky { @apply h-12 text-center text-lg font-mono; }
+  /* Hide default text selection highlight (blue background) */
+  .no-selection::selection { background: transparent; color: inherit; }
+  .no-selection::-moz-selection { background: transparent; color: inherit; }
+  /* Brand-styled checkbox */
+  .checkbox-brand { @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted focus-visible:ring-offset-2 border-gray-300 rounded; }
+  .checkbox-brand:focus-visible { --tw-ring-color: var(--brand-secondary); }
+  .checkbox-brand { accent-color: var(--brand-primary); }
+}
+
+
+

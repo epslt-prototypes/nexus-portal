@@ -1,0 +1,13 @@
+{
+  "users": [
+    { "id": 1, "name": "Jonas" },
+    { "id": 2, "name": "Paulina" }
+  ],
+  "tasks": [
+    { "id": 1, "title": "Build prototype", "done": false },
+    { "id": 2, "title": "Show demo", "done": true }
+  ]
+}
+
+
+
