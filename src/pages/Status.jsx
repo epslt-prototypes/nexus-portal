@@ -3,8 +3,10 @@ import Button from '../components/Button.jsx'
 import { Select, DateInput } from '../components/Inputs.jsx'
 import Modal from '../components/Modal.jsx'
 import React, { useMemo, useState } from 'react'
+import { useI18n } from '../theme/LanguageProvider'
 
 export default function Status() {
+  const { t } = useI18n()
   function parseEur(value) {
     if (value == null) return 0
     const normalized = String(value).replace(/\s/g, '').replace(',', '.')
@@ -143,44 +145,44 @@ export default function Status() {
     <section className="py-6">
       <div className="grid gap-6">
         <Card className="p-6">
-          <h2 className="text-2xl font-semibold text-gray-800">Paslaugų būsena</h2>
+          <h2 className="text-2xl font-semibold text-gray-800">{t('servicesStatusTitle')}</h2>
           <div className="mt-6 border-t border-dashed" />
           <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:gap-3">
             <div className="relative w-full flex-1">
-              <label className="mb-1 block text-sm font-medium text-gray-700">Būsena</label>
+              <label className="mb-1 block text-sm font-medium text-gray-700">{t('status')}</label>
               <Select
                 value={statusFilter}
                 onChange={e => setStatusFilter(e.target.value)}
                 selectClassName="text-sm"
               >
-                <option value="all">Visos</option>
-                <option value="approved">Patvirtinti</option>
-                <option value="pending">Laukiami</option>
-                <option value="rejected">Atmesti</option>
-                <option value="needsClarification">Būtina patikslinti</option>
+                <option value="all">{t('all')}</option>
+                <option value="approved">{t('approved')}</option>
+                <option value="pending">{t('pendingApproval')}</option>
+                <option value="rejected">{t('rejected')}</option>
+                <option value="needsClarification">{t('needsClarificationLegend')}</option>
               </Select>
             </div>
             <div className="relative w-full flex-1">
-              <label className="mb-1 block text-sm font-medium text-gray-700">Vartotojas</label>
+              <label className="mb-1 block text-sm font-medium text-gray-700">{t('user')}</label>
               <Select
                 value={userFilter}
                 onChange={e => setUserFilter(e.target.value)}
                 selectClassName="text-sm"
               >
-                <option value="all">Visi</option>
+                <option value="all">{t('all')}</option>
                 {availableUsers.map(u => (
                   <option key={u} value={u}>{u}</option>
                 ))}
               </Select>
             </div>
             <DateInput
-              label="Data nuo"
+              label={t('dateFrom')}
               value={dateFrom}
               onChange={e => setDateFrom(e.target.value)}
               className="h-10"
             />
             <DateInput
-              label="Data iki"
+              label={t('dateTo')}
               value={dateTo}
               onChange={e => setDateTo(e.target.value)}
               className="h-10"
@@ -188,10 +190,10 @@ export default function Status() {
           </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-gray-600">
-            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-emerald-500" /> Patvirtinta</div>
-            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-amber-500" /> Laukia patvirtinimo</div>
-            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-rose-500" /> Draudikas nekompensuoja</div>
-            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-orange-500" /> Būtina patikslinti</div>
+            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-emerald-500" /> {t('approvedLegend')}</div>
+            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-amber-500" /> {t('pendingLegend')}</div>
+            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-rose-500" /> {t('notCompensatedLegend')}</div>
+            <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-orange-500" /> {t('needsClarificationLegend')}</div>
           </div>
 
           <div className="mt-4 overflow-x-auto overflow-y-hidden rounded-lg border">
@@ -230,7 +232,7 @@ export default function Status() {
                   const displayVatRate = `0%`
                   const displayNoVat = `${formatEur(afterDiscountTotal)} €`
                   const statusColor = svc.status === 'approved' ? 'bg-emerald-500' : svc.status === 'pending' ? 'bg-amber-500' : svc.status === 'needsClarification' ? 'bg-orange-500' : 'bg-rose-500'
-                  const statusLabel = svc.status === 'approved' ? 'Patvirtinta' : svc.status === 'pending' ? 'Laukia patvirtinimo' : svc.status === 'needsClarification' ? 'Būtina patikslinti' : 'Atmesta'
+                  const statusLabel = svc.status === 'approved' ? t('approved') : svc.status === 'pending' ? t('pendingApproval') : svc.status === 'needsClarification' ? t('needsClarificationLegend') : t('rejected')
                   const isHovered = hoveredServiceId === svc.id
                   const hoverBg = isHovered ? 'bg-[var(--brand-light)]' : 'bg-white'
                   return (
@@ -245,7 +247,7 @@ export default function Status() {
                         <td className="px-3 py-1 text-sm border-t border-l border-r border-gray-200" colSpan={8}>
                           <span className="font-medium">{svc.name}</span>
                           <span className="mx-2 text-gray-400">·</span>
-                          <span className="font-mono text-gray-700">Kodas {svc.code}</span>
+                          <span className="font-mono text-gray-700">{t('code')} {svc.code}</span>
                           <span className="mx-2 text-gray-400">·</span>
                           <span className="text-gray-700">{displayQuantity}</span>
                         </td>
@@ -286,57 +288,57 @@ export default function Status() {
             </table>
           </div>
 
-          <Modal open={detailOpen} onClose={() => setDetailOpen(false)} title="Paslaugos detalės">
+          <Modal open={detailOpen} onClose={() => setDetailOpen(false)} title={t('detailsTitle')}>
             {selectedService && (
               <div className="grid grid-cols-1 gap-4 text-sm">
                 <div>
-                  <div className="mb-1 text-gray-500">Pavadinimas</div>
+                  <div className="mb-1 text-gray-500">{t('name')}</div>
                   <div className="text-gray-900">{selectedService.name}</div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Kodas</div>
+                    <div className="mb-1 text-gray-500">{t('code')}</div>
                     <div className="font-mono text-gray-900">{selectedService.code}</div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">Ligos kodas</div>
+                    <div className="mb-1 text-gray-500">{t('diseaseCode')}</div>
                     <div className="text-gray-900">{selectedService.diseaseCode}</div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Būsena</div>
+                    <div className="mb-1 text-gray-500">{t('statusLabel')}</div>
                     <div className="text-gray-900">
                       <span className={`mr-2 inline-block h-3 w-3 rounded-sm align-middle ${selectedService.status === 'approved' ? 'bg-emerald-500' : selectedService.status === 'pending' ? 'bg-amber-500' : selectedService.status === 'needsClarification' ? 'bg-orange-500' : 'bg-rose-500'}`} />
-                      <span className="align-middle">{selectedService.status === 'approved' ? 'Patvirtinta' : selectedService.status === 'pending' ? 'Laukia patvirtinimo' : selectedService.status === 'needsClarification' ? 'Būtina patikslinti' : 'Atmesta'}</span>
+                      <span className="align-middle">{selectedService.status === 'approved' ? t('approved') : selectedService.status === 'pending' ? t('pendingApproval') : selectedService.status === 'needsClarification' ? t('needsClarificationLegend') : t('rejected')}</span>
                     </div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">Paslaugos kodas</div>
+                    <div className="mb-1 text-gray-500">{t('serviceCode')}</div>
                     <div className="font-mono text-gray-900">{selectedService.code}</div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Kiekis</div>
+                    <div className="mb-1 text-gray-500">{t('quantity')}</div>
                     <div className="text-gray-900">{selectedService.quantity}</div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">Vnt. kaina (EUR)</div>
+                    <div className="mb-1 text-gray-500">{t('unitPriceEur')}</div>
                     <div className="text-gray-900">{selectedService.unitPrice}</div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Nuolaida</div>
+                    <div className="mb-1 text-gray-500">{t('discountLabel')}</div>
                     <div className="text-gray-900">{selectedService.discountPercent || '0,00'}</div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">TLK kompensacija (EUR)</div>
+                    <div className="mb-1 text-gray-500">{t('tlkCompensationLabel')}</div>
                     <div className="text-gray-900">{selectedService.tlkCompensation || '0,00'}</div>
                   </div>
                 </div>
@@ -361,31 +363,31 @@ export default function Status() {
                   return (
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                       <div>
-                        <div className="mb-1 text-gray-500">Visa kaina (EUR)</div>
+                        <div className="mb-1 text-gray-500">{t('totalPrice')}</div>
                         <div className="text-gray-900">{formatEur(totalPrice)}</div>
                       </div>
                       <div>
-                        <div className="mb-1 text-gray-500">TLK nuolaida (EUR)</div>
+                        <div className="mb-1 text-gray-500">{t('tlkPart')}</div>
                         <div className="text-gray-900">{formatEur(tlkTotal)}</div>
                       </div>
                       <div>
-                        <div className="mb-1 text-gray-500">Nuolaida (EUR)</div>
+                        <div className="mb-1 text-gray-500">{t('discount')}</div>
                         <div className="text-gray-900">{formatEur(discountValTotal)}</div>
                       </div>
                       <div>
-                        <div className="mb-1 text-gray-500">Draudiko mokama dalis (EUR)</div>
+                        <div className="mb-1 text-gray-500">{t('insurerPays')}</div>
                         <div className="text-gray-900">{formatEur(tlkTotal)}</div>
                       </div>
                       <div>
-                        <div className="mb-1 text-gray-500">Sumokėta su PVM (EUR)</div>
+                        <div className="mb-1 text-gray-500">{t('totalPrice')}</div>
                         <div className="text-gray-900">{formatEur(totalWithVat)}</div>
                       </div>
                       <div>
-                        <div className="mb-1 text-gray-500">PVM tarifas (%)</div>
+                        <div className="mb-1 text-gray-500">{t('vatRate')}</div>
                         <div className="text-gray-900">{vatRate}</div>
                       </div>
                       <div>
-                        <div className="mb-1 text-gray-500">Sumokėta be PVM (EUR)</div>
+                        <div className="mb-1 text-gray-500">{t('amountWithoutVat')}</div>
                         <div className="text-gray-900">{formatEur(totalNoVat)}</div>
                       </div>
                     </div>
@@ -396,50 +398,50 @@ export default function Status() {
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Įvedė</div>
+                    <div className="mb-1 text-gray-500">{t('enteredBy')}</div>
                     <div className="text-gray-900">{selectedService.enteredBy || '—'}</div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">Autorizacijos Nr.</div>
+                    <div className="mb-1 text-gray-500">{t('authNumber')}</div>
                     <div className="text-gray-900">{selectedService.authorizationNumber || '—'}</div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Apdraustasis</div>
+                    <div className="mb-1 text-gray-500">{t('insuredPerson')}</div>
                     <div className="text-gray-900">{selectedService.insuredName || '—'}</div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">Data</div>
+                    <div className="mb-1 text-gray-500">{t('date')}</div>
                     <div className="text-gray-900">{selectedService.createdAt || '—'}</div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Kortelės numeris</div>
+                    <div className="mb-1 text-gray-500">{t('cardNumber')}</div>
                     <div className="font-mono text-gray-900">{selectedService.cardNumber || '—'}</div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">Asmens kodas</div>
+                    <div className="mb-1 text-gray-500">{t('personalCode')}</div>
                     <div className="font-mono text-gray-900">{selectedService.personalCode || '—'}</div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
-                    <div className="mb-1 text-gray-500">Partnerio komentaras</div>
+                    <div className="mb-1 text-gray-500">{t('partnerComment') || 'Partnerio komentaras'}</div>
                     <div className="text-gray-900">{selectedService.partnerComment || '—'}</div>
                   </div>
                   <div>
-                    <div className="mb-1 text-gray-500">Draudiko komentaras</div>
+                    <div className="mb-1 text-gray-500">{t('insurerComment') || 'Draudiko komentaras'}</div>
                     <div className="text-gray-900">{selectedService.insurerComment || '—'}</div>
                   </div>
                 </div>
 
                 <div className="mt-2 flex justify-end">
-                  <Button onClick={() => setDetailOpen(false)}>Uždaryti</Button>
+                  <Button onClick={() => setDetailOpen(false)}>{t('closeAction')}</Button>
                 </div>
               </div>
             )}

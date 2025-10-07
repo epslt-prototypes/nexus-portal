@@ -2,10 +2,12 @@ import Card from '../components/Card.jsx'
 import Button from '../components/Button.jsx'
 import { Select, Input } from '../components/Inputs.jsx'
 import { useEffect, useMemo, useState } from 'react'
+import { useI18n } from '../theme/LanguageProvider'
 
 export default function ServicesList() {
+  const { t, lang } = useI18n()
   const [searchQuery, setSearchQuery] = useState('')
-  const [statusFilter, setStatusFilter] = useState('viskas') // 'viskas' | 'draudigo-patvirtintos' | 'draudiko-nepatvirtintos'
+  const [statusFilter, setStatusFilter] = useState('all') // 'all' | 'insurer-approved' | 'insurer-not-approved'
   const [katalogas, setKatalogas] = useState([])
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function ServicesList() {
       
       // Determine status based on TLK compensation
       const tlkValue = parseFloat(tlkCompensation.replace(',', '.')) || 0
-      const status = tlkValue > 0 ? 'draudigo-patvirtintos' : 'draudiko-nepatvirtintos'
+      const status = tlkValue > 0 ? 'insurer-approved' : 'insurer-not-approved'
       
       return {
         id: `svc-${idx}`,
@@ -66,7 +68,7 @@ export default function ServicesList() {
     }
 
     // Apply status filter
-    if (statusFilter !== 'viskas') {
+    if (statusFilter !== 'all') {
       filtered = filtered.filter(service => service.status === statusFilter)
     }
 
@@ -99,7 +101,7 @@ export default function ServicesList() {
     if (!dateString) return '-'
     try {
       const date = new Date(dateString)
-      return date.toLocaleDateString('lt-LT')
+      return date.toLocaleDateString(lang === 'lt' ? 'lt-LT' : 'en-GB')
     } catch {
       return dateString
     }
@@ -108,12 +110,12 @@ export default function ServicesList() {
   // Get status display info
   function getStatusInfo(status) {
     switch (status) {
-      case 'draudigo-patvirtintos':
-        return { label: 'Draudiko patvirtintos', color: 'bg-emerald-500' }
-      case 'draudiko-nepatvirtintos':
-        return { label: 'Draudiko nepatvirtintos', color: 'bg-rose-500' }
+      case 'insurer-approved':
+        return { label: t('legendApproved'), color: 'bg-emerald-500' }
+      case 'insurer-not-approved':
+        return { label: t('legendNotApproved'), color: 'bg-rose-500' }
       default:
-        return { label: 'Nežinoma', color: 'bg-gray-500' }
+        return { label: '-', color: 'bg-gray-500' }
     }
   }
 
@@ -122,7 +124,7 @@ export default function ServicesList() {
       <section className="py-6">
         <div className="grid gap-6">
           <Card className="p-6">
-            <h2 className="text-2xl font-semibold text-gray-800">Paslaugų katalogas</h2>
+            <h2 className="text-2xl font-semibold text-gray-800">{t('servicesCatalogTitle')}</h2>
             <div className="mt-6 border-t border-dashed" />
             
             {/* Search and Filter Row */}
@@ -131,24 +133,24 @@ export default function ServicesList() {
                 <Input
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Ieškoti pagal paslaugos kodą arba pavadinimą..."
+                  placeholder={t('searchPlaceholderServices')}
                   className="w-full h-10 mt-2"
                   type="search"
                 />
               </div>
               <div className="sm:w-64">
                 <Select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} className="mt-2" selectClassName="h-10">
-                  <option value="viskas">Viskas</option>
-                  <option value="draudigo-patvirtintos">Draudiko patvirtintos</option>
-                  <option value="draudiko-nepatvirtintos">Draudiko nepatvirtintos</option>
+                  <option value="all">{t('filterAll')}</option>
+                  <option value="insurer-approved">{t('filterApproved')}</option>
+                  <option value="insurer-not-approved">{t('filterNotApproved')}</option>
                 </Select>
               </div>
             </div>
 
             {/* Legend above table */}
             <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-gray-600 mb-1">
-              <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-emerald-500" /> Draudiko patvirtintos</div>
-              <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-rose-500" /> Draudiko nepatvirtintos</div>
+              <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-emerald-500" /> {t('legendApproved')}</div>
+              <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-rose-500" /> {t('legendNotApproved')}</div>
             </div>
 
             {/* Services Table */}
@@ -157,23 +159,23 @@ export default function ServicesList() {
                 <table className="w-full table-auto text-sm">
                   <thead className="bg-gray-50 text-xs font-medium text-gray-600 sticky top-0">
                     <tr>
-                      <th className="px-3 py-3 text-left">Kodas</th>
-                      <th className="px-3 py-3 text-left">Pavadinimas</th>
-                      <th className="px-3 py-3 text-right">Visa kaina (EUR)</th>
-                      <th className="px-3 py-3 text-right">PVM tarifas (%)</th>
-                      <th className="px-3 py-3 text-right">TLK komp. (EUR)</th>
-                      <th className="px-3 py-3 text-center">Galioja nuo</th>
-                      <th className="px-3 py-3 text-center">Galioja iki</th>
-                      <th className="px-3 py-3 text-center">Būsena</th>
+                      <th className="px-3 py-3 text-left">{t('thCode')}</th>
+                      <th className="px-3 py-3 text-left">{t('thName')}</th>
+                      <th className="px-3 py-3 text-right">{t('thTotalPriceEur')}</th>
+                      <th className="px-3 py-3 text-right">{t('thVatRatePct')}</th>
+                      <th className="px-3 py-3 text-right">{t('thTlkCompEur')}</th>
+                      <th className="px-3 py-3 text-center">{t('thValidFrom')}</th>
+                      <th className="px-3 py-3 text-center">{t('thValidTo')}</th>
+                      <th className="px-3 py-3 text-center">{t('thStatus')}</th>
                     </tr>
                   </thead>
                   <tbody>
                   {filteredServices.length === 0 ? (
                     <tr>
                       <td colSpan={8} className="px-3 py-8 text-center text-gray-500">
-                        {searchQuery || statusFilter !== 'viskas' 
-                          ? 'Pagal paieškos kriterijus paslaugų nerasta'
-                          : 'Paslaugų nėra'
+                        {searchQuery || statusFilter !== 'all' 
+                          ? t('emptyFiltered')
+                          : t('emptyNoServices')
                         }
                       </td>
                     </tr>
@@ -205,17 +207,17 @@ export default function ServicesList() {
 
             {/* Results count */}
             <div className="mt-4 text-sm text-gray-600">
-              Rodyti {filteredServices.length} iš {services.length} paslaugų
+              {t('showing')} {filteredServices.length} {t('of')} {services.length} {t('servicesWord')}
             </div>
 
             {/* Action Buttons */}
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <div className="flex gap-3">
-                <Button variant="secondary">Importuoti</Button>
-                <Button variant="secondary">Spausdinti</Button>
+                <Button variant="secondary">{t('import')}</Button>
+                <Button variant="secondary">{t('print')}</Button>
               </div>
               <div className="ml-auto">
-                <Button>Nauja paslauga</Button>
+                <Button>{t('newService')}</Button>
               </div>
             </div>
           </Card>

@@ -1,27 +1,33 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Home, FolderOpen, Settings, ChevronLeft, ChevronRight, ListChecks, Receipt, FileSpreadsheet, ClipboardList, LogOut } from 'lucide-react'
+import { useI18n } from '../theme/LanguageProvider'
 
-const navGroups = [
-  {
-    title: 'Paslaugos',
-    items: [
-      { to: '/services-entry', label: 'Įvesti naują', icon: ClipboardList },
-      { to: '/services', label: 'Katalogas', icon: FolderOpen },
-      { to: '/status', label: 'Būsena', icon: ListChecks },
-      { to: '/receipts', label: 'Kvitai', icon: Receipt },
-    ]
-  },
-  {
-    title: 'Aktai',
-    items: [
-      { to: '/acts', label: 'Apmokėjimo aktai', icon: FileSpreadsheet },
-    ]
-  }
-]
+function useNavGroups() {
+  const { t } = useI18n()
+  return [
+    {
+      title: t('services'),
+      items: [
+        { to: '/portal/services-entry', label: t('servicesNew'), icon: ClipboardList },
+        { to: '/portal/services', label: t('servicesCatalog'), icon: FolderOpen },
+        { to: '/portal/status', label: t('servicesStatus'), icon: ListChecks },
+        { to: '/portal/receipts', label: t('servicesReceipts'), icon: Receipt },
+      ]
+    },
+    {
+      title: t('acts'),
+      items: [
+        { to: '/portal/acts', label: t('actsPayments'), icon: FileSpreadsheet },
+      ]
+    }
+  ]
+}
 
 export default function Sidebar() {
+  const { t } = useI18n()
   const [collapsed, setCollapsed] = useState(false)
+  const navGroups = useNavGroups()
   return (
     <aside className={`hidden md:block ${collapsed ? 'w-16' : 'w-64'} transition-all duration-200 shrink-0 self-start border-x border-b rounded-b-xl overflow-hidden bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60`}>
       <div className="sticky top-14 px-2 py-2">
@@ -36,7 +42,7 @@ export default function Sidebar() {
                     <span className="truncate">{title}</span>
                     {isFirst && (
                       <button
-                        aria-label={collapsed ? 'Išskleisti navigaciją' : 'Sutraukti navigaciją'}
+                        aria-label={collapsed ? t('navigationExpand') : t('navigationCollapse')}
                         className="focus-ring ml-auto inline-flex items-center justify-center rounded-md border bg-white p-1.5 text-gray-600 hover:bg-gray-50"
                         onClick={() => setCollapsed((v) => !v)}
                       >
@@ -48,10 +54,10 @@ export default function Sidebar() {
                 {collapsed && isFirst && (
                   <div className="px-2 pb-1">
                     <button
-                      aria-label={collapsed ? 'Išskleisti navigaciją' : 'Sutraukti navigaciją'}
+                      aria-label={collapsed ? t('navigationExpand') : t('navigationCollapse')}
                       className="focus-ring ml-auto inline-flex items-center justify-center rounded-md border bg-white p-1.5 text-gray-600 hover:bg-gray-50"
                       onClick={() => setCollapsed((v) => !v)}
-                      title={collapsed ? 'Išskleisti navigaciją' : 'Sutraukti navigaciją'}
+                      title={collapsed ? t('navigationExpand') : t('navigationCollapse')}
                     >
                       {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
                     </button>

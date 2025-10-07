@@ -6,8 +6,10 @@ import { Umbrella, Bell, User, ChevronDown } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import NotificationDropdown from './NotificationDropdown'
 import InsurerLogoButton from './InsurerLogoButton'
+import { useI18n } from '../theme/LanguageProvider'
 
 export default function Topbar() {
+  const { t } = useI18n()
   const { theme, setTheme } = useContext(ThemeContext)
   const clinicName = 'UAB "SVEIKATA"'
 
@@ -30,7 +32,7 @@ export default function Topbar() {
             </div>
           <div className="flex items-center gap-2 justify-self-end">
             <Menu as="div" className="relative inline-block text-left">
-              <MenuButton aria-label="Pranešimai" className="focus-ring relative inline-flex h-10 w-10 items-center justify-center rounded-lg border bg-white text-gray-600 hover:bg-gray-50" title="Pranešimai">
+              <MenuButton aria-label={t('notifications')} className="focus-ring relative inline-flex h-10 w-10 items-center justify-center rounded-lg border bg-white text-gray-600 hover:bg-gray-50" title={t('notifications')}>
                 <Bell className="h-5 w-5" />
                 <span className="absolute -top-1 -right-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-semibold text-white shadow ring-2 ring-white">2</span>
               </MenuButton>
@@ -59,7 +61,7 @@ export default function Topbar() {
                   <MenuItem>
                     {({ active }) => (
                       <NavLink to="/settings" className={`block rounded-md px-3 py-2 text-sm ${active ? 'bg-gray-50' : ''}`}>
-                        Nustatymai
+                        {t('settings')}
                       </NavLink>
                     )}
                   </MenuItem>
@@ -71,7 +73,7 @@ export default function Topbar() {
                         onClick={() => { try { localStorage.clear(); sessionStorage.clear(); } catch {} window.location.href = '/' }}
                         className={`w-full text-left block rounded-md px-3 py-2 text-sm text-red-600 ${active ? 'bg-red-50' : ''}`}
                       >
-                        Baigti darbą
+                        {t('logout')}
                       </button>
                     )}
                   </MenuItem>

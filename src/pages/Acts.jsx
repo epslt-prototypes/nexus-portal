@@ -3,10 +3,12 @@ import Button from '../components/Button.jsx'
 import Modal from '../components/Modal.jsx'
 import { DateInput, Input } from '../components/Inputs.jsx'
 import React, { useEffect, useMemo, useState } from 'react'
+import { useI18n } from '../theme/LanguageProvider'
 import { Printer, FileText, FileDown, FileSpreadsheet } from 'lucide-react'
 // Load acts from public/mock at runtime
 
 export default function Acts() {
+  const { t } = useI18n()
   function parseEur(value) {
     if (value == null) return 0
     const normalized = String(value).replace(/\s/g, '').replace(',', '.')
@@ -100,26 +102,26 @@ export default function Acts() {
   }
 
   const filtered = useMemo(() => {
-    return acts.filter(a => {
+    const query = searchQuery.trim().toLowerCase()
+
+    const next = acts.filter(a => {
       if (!withinDateRange(a.createdAt)) return false
-      
-      if (searchQuery.trim()) {
-        const query = searchQuery.toLowerCase().trim()
-        const searchableText = [
-          a.number,
-          a.status,
-          a.totalEur,
-          a.totalNoVatEur,
-          a.createdAtDisplay,
-          a.invoiceReceivedAtDisplay,
-          a.enteredBy
-        ].join(' ').toLowerCase()
-        
-        return searchableText.includes(query)
-      }
-      
-      return true
+      if (!query) return true
+
+      const rowText = [
+        a.number,
+        a.status,
+        a.totalEur,
+        a.totalNoVatEur,
+        a.createdAtDisplay,
+        a.invoiceReceivedAtDisplay,
+        a.enteredBy,
+      ].join(' ').toLowerCase()
+
+      return rowText.includes(query)
     })
+
+    return [...next]
   }, [acts, dateFrom, dateTo, searchQuery])
 
   const [selectedAct, setSelectedAct] = useState(null)
@@ -131,7 +133,7 @@ export default function Acts() {
       <div className="grid gap-6">
         <Card className="p-6">
           <div className="flex items-start">
-            <h2 className="text-2xl font-semibold text-gray-800">{selectedAct ? selectedAct.number : 'Apmokėjimo aktai'}</h2>
+            <h2 className="text-2xl font-semibold text-gray-800">{selectedAct ? selectedAct.number : t('actsTitle')}</h2>
             {selectedAct && (
               <div className="ml-auto">
                 <button
@@ -139,7 +141,7 @@ export default function Acts() {
                   className="focus-ring inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 bg-white px-4 text-sm text-gray-900 hover:bg-gray-50"
                   onClick={() => setSelectedAct(null)}
                 >
-                  Uždaryti
+                  {t('close')}
                 </button>
               </div>
             )}
@@ -150,20 +152,20 @@ export default function Acts() {
             <>
               <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                 <Input
-                  label="Ieškoti"
-                  placeholder="Ieškoti pagal bet kurį lauką..."
+                  label={t('search')}
+                  placeholder={t('searchPlaceholderActs')}
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   className="flex-1"
                 />
                 <div className="flex gap-3">
                   <DateInput
-                    label="Data nuo"
+                    label={t('dateFrom')}
                     value={dateFrom}
                     onChange={e => setDateFrom(e.target.value)}
                   />
                   <DateInput
-                    label="Data iki"
+                    label={t('dateTo')}
                     value={dateTo}
                     onChange={e => setDateTo(e.target.value)}
                   />
@@ -174,40 +176,41 @@ export default function Acts() {
                 <table className="w-full table-auto text-sm">
                   <thead className="bg-gray-50 text-xs font-medium text-gray-600">
                     <tr>
-                      <th className="px-3 py-2 text-left whitespace-nowrap">Reikalavimo akto Nr.</th>
-                      <th className="px-3 py-2 text-left w-full">Apmokėjimo būklė</th>
-                      <th className="px-3 py-2 text-right">Suma (EUR)</th>
-                      <th className="px-3 py-2 text-right">Suma be PVM (EUR)</th>
-                      <th className="px-3 py-2 text-left">Sudarymo data</th>
-                      <th className="px-3 py-2 text-left">SF gavimo data</th>
-                      <th className="px-3 py-2 text-left">Įvedė</th>
+                      <th className="px-3 py-2 text-left whitespace-nowrap">{t('claimActNumber')}</th>
+                      <th className="px-3 py-2 text-left w-full">{t('paymentStatus')}</th>
+                      <th className="px-3 py-2 text-right">{t('sumEur')}</th>
+                      <th className="px-3 py-2 text-right">{t('sumNoVatEur')}</th>
+                      <th className="px-3 py-2 text-left">{t('createdAtShort')}</th>
+                      <th className="px-3 py-2 text-left">{t('invoiceReceivedAt')}</th>
+                      <th className="px-3 py-2 text-left">{t('enteredByLabel')}</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {filtered.map(a => (
-                      <tr key={a.id} className="bg-white cursor-pointer hover:bg-[var(--brand-light)]" onClick={() => setSelectedAct(a)}>
-                        <td className="px-3 py-2 border-t border-l border-gray-200 whitespace-nowrap">{a.number}</td>
-                        <td className="px-3 py-2 border-t border-gray-200 w-full whitespace-nowrap">
-                          <span className={`font-medium ${
-                            a.status === 'Patvirtinta' ? 'text-green-600' :
-                            a.status === 'Laukia patvirtinimo' ? 'text-yellow-600' :
-                            a.status === 'Atmesta' ? 'text-red-600' :
-                            'text-gray-600'
-                          }`}>
-                            {a.status}
-                          </span>
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums border-t border-gray-200 whitespace-nowrap">{a.totalEur} €</td>
-                        <td className="px-3 py-2 text-right tabular-nums border-t border-gray-200 whitespace-nowrap">{a.totalNoVatEur} €</td>
-                        <td className="px-3 py-2 border-t border-gray-200 whitespace-nowrap">{a.createdAtDisplay}</td>
-                        <td className="px-3 py-2 border-t border-gray-200 whitespace-nowrap">{a.invoiceReceivedAtDisplay}</td>
-                        <td className="px-3 py-2 border-t border-r border-gray-200 whitespace-nowrap">{a.enteredBy}</td>
-                      </tr>
-                    ))}
-                    {filtered.length === 0 && (
+                    {filtered.length === 0 ? (
                       <tr>
-                        <td className="px-3 py-6 text-center text-gray-500" colSpan={7}>Įrašų nerasta pagal pasirinktus filtrus</td>
+                        <td className="px-3 py-6 text-center text-gray-500" colSpan={7}>{t('noRecordsActs')}</td>
                       </tr>
+                    ) : (
+                      filtered.map((a, idx) => (
+                        <tr key={`${a.id || 'na'}-${a.number || 'na'}-${a.createdAt || a.createdAtDisplay || 'na'}-${a.invoiceReceivedAt || a.invoiceReceivedAtDisplay || 'na'}-${a.enteredBy || 'na'}-${idx}`} className="bg-white cursor-pointer hover:bg-[var(--brand-light)]" onClick={() => setSelectedAct(a)}>
+                          <td className="px-3 py-2 border-t border-l border-gray-200 whitespace-nowrap">{a.number}</td>
+                          <td className="px-3 py-2 border-t border-gray-200 w-full whitespace-nowrap">
+                            <span className={`font-medium ${
+                              a.status === 'Patvirtinta' ? 'text-green-600' :
+                              a.status === 'Laukia patvirtinimo' ? 'text-yellow-600' :
+                              a.status === 'Atmesta' ? 'text-red-600' :
+                              'text-gray-600'
+                            }`}>
+                              {a.status}
+                            </span>
+                          </td>
+                          <td className="px-3 py-2 text-right tabular-nums border-t border-gray-200 whitespace-nowrap">{a.totalEur} €</td>
+                          <td className="px-3 py-2 text-right tabular-nums border-t border-gray-200 whitespace-nowrap">{a.totalNoVatEur} €</td>
+                          <td className="px-3 py-2 border-t border-gray-200 whitespace-nowrap">{a.createdAtDisplay}</td>
+                          <td className="px-3 py-2 border-t border-gray-200 whitespace-nowrap">{a.invoiceReceivedAtDisplay}</td>
+                          <td className="px-3 py-2 border-t border-r border-gray-200 whitespace-nowrap">{a.enteredBy}</td>
+                        </tr>
+                      ))
                     )}
                   </tbody>
                 </table>
@@ -219,19 +222,19 @@ export default function Acts() {
             <>
               <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
                 <div>
-                  <div className="mb-1 text-gray-500">Suformavimo data</div>
+                  <div className="mb-1 text-gray-500">{t('formedDate')}</div>
                   <div className="text-gray-900">{selectedAct.createdAtDisplay}</div>
                 </div>
                 <div>
-                  <div className="mb-1 text-gray-500">SF gavimo data</div>
+                  <div className="mb-1 text-gray-500">{t('invoiceReceivedAt')}</div>
                   <div className="text-gray-900">{selectedAct.invoiceReceivedAtDisplay}</div>
                 </div>
               </div>
 
               <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-gray-600">
-                <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-green-500" /> Patvirtinta</div>
-                <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-yellow-500" /> Laukia patvirtinimo</div>
-                <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-red-500" /> Atmesta</div>
+                <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-green-500" /> {t('approved')}</div>
+                <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-yellow-500" /> {t('pendingApproval')}</div>
+                <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-red-500" /> {t('rejected')}</div>
               </div>
 
               <div className="mt-2 overflow-x-auto overflow-y-hidden rounded-lg border">
@@ -270,7 +273,7 @@ export default function Acts() {
                       const displayVatRate = `${svc.vatRate || 0}%`
                       const displayNoVat = `${formatEur(afterDiscountTotal)} €`
                       const statusColor = svc.status === 'approved' ? 'bg-emerald-500' : svc.status === 'pending' ? 'bg-amber-500' : svc.status === 'needsClarification' ? 'bg-orange-500' : 'bg-rose-500'
-                      const statusLabel = svc.status === 'approved' ? 'Patvirtinta' : svc.status === 'pending' ? 'Laukia patvirtinimo' : svc.status === 'needsClarification' ? 'Būtina patikslinti' : 'Atmesta'
+                      const statusLabel = svc.status === 'approved' ? t('approved') : svc.status === 'pending' ? t('pendingApproval') : svc.status === 'needsClarification' ? t('needsClarificationLegend') : t('rejected')
                       const isHovered = hoveredServiceId === svc.id
                       const hoverBg = isHovered ? 'bg-[var(--brand-light)]' : 'bg-white'
                       return (
@@ -284,7 +287,7 @@ export default function Acts() {
                             <td className="px-3 py-1 text-sm border-t border-l border-r border-gray-200" colSpan={8}>
                               <span className="font-medium">{svc.name}</span>
                               <span className="mx-2 text-gray-400">·</span>
-                              <span className="font-mono text-gray-700">Kodas {svc.code}</span>
+                              <span className="font-mono text-gray-700">{t('code')} {svc.code}</span>
                               <span className="mx-2 text-gray-400">·</span>
                               <span className="text-gray-700">{displayQuantity}</span>
                             </td>
@@ -330,7 +333,7 @@ export default function Acts() {
                     onClick={() => setPrintOpen(true)}
                   >
                     <Printer className="mr-2 h-4 w-4" />
-                    Spausdinti
+                    {t('print')}
                   </Button>
                 </div>
                 <div className="ml-auto order-1 w-full max-w-sm rounded-lg border p-4 md:order-2">
@@ -363,15 +366,15 @@ export default function Acts() {
                     return (
                       <>
                         <div className="flex justify-between text-sm text-gray-600">
-                          <span>Viso be PVM (EUR)</span>
+                          <span>{t('amountWithoutVat')}</span>
                           <span className="font-semibold text-gray-900">{formatEur(totals.totalInsurerWithoutVat)}</span>
                         </div>
                         <div className="mt-2 flex justify-between text-sm text-gray-600">
-                          <span>PVM (EUR)</span>
+                          <span>{t('vatAmount')}</span>
                           <span className="font-semibold text-gray-900">{formatEur(totals.totalVat)}</span>
                         </div>
                         <div className="mt-2 flex justify-between text-sm text-gray-600">
-                          <span>Viso (EUR)</span>
+                          <span>{t('totalShort')}</span>
                           <span className="font-semibold text-gray-900">{formatEur(totals.totalInsurerWithVat)}</span>
                         </div>
                       </>
@@ -386,11 +389,11 @@ export default function Acts() {
         <Modal
           open={printOpen}
           onClose={() => setPrintOpen(false)}
-          title="Eksportuoti aktą"
+          title={t('exportReceipt')}
           size="md"
           footer={(
             <>
-              <Button variant="primary" onClick={() => setPrintOpen(false)}>Atšaukti</Button>
+              <Button variant="primary" onClick={() => setPrintOpen(false)}>{t('cancelAction')}</Button>
             </>
           )}
         >
@@ -398,11 +401,11 @@ export default function Acts() {
             <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <div className="text-sm font-medium text-gray-900">Aktas {selectedAct?.number}</div>
+                  <div className="text-sm font-medium text-gray-900">{t('actLabel')} {selectedAct?.number}</div>
                   <div className="mt-0.5 text-xs text-gray-600">{selectedAct?.createdAtDisplay}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-gray-600">Viso (EUR)</div>
+                  <div className="text-xs text-gray-600">{t('totalShort')}</div>
                   <div className="text-sm font-semibold tabular-nums text-gray-900">
                     {selectedAct ? (() => {
                       const totalInsurerWithVat = selectedAct.services.reduce((acc, svc) => {
@@ -419,19 +422,19 @@ export default function Acts() {
             </div>
 
             <div>
-              <div className="text-sm font-medium text-gray-800">Pasirinkite eksporto formatą</div>
+              <div className="text-sm font-medium text-gray-800">{t('chooseExportFormat')}</div>
               <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <Button variant="secondary" onClick={() => { /* placeholder for DOCX generation */ setPrintOpen(false) }}>
-                  <FileText className="mr-2 h-4 w-4 text-blue-600" /> Word
+                  <FileText className="mr-2 h-4 w-4 text-blue-600" /> {t('word')}
                 </Button>
                 <Button variant="secondary" onClick={() => { /* placeholder for PDF generation */ setPrintOpen(false) }}>
-                  <FileDown className="mr-2 h-4 w-4 text-red-600" /> PDF
+                  <FileDown className="mr-2 h-4 w-4 text-red-600" /> {t('pdf')}
                 </Button>
                 <Button variant="secondary" onClick={() => { /* placeholder for Excel generation */ setPrintOpen(false) }}>
-                  <FileSpreadsheet className="mr-2 h-4 w-4 text-emerald-600" /> Excel
+                  <FileSpreadsheet className="mr-2 h-4 w-4 text-emerald-600" /> {t('excel')}
                 </Button>
               </div>
-              <p className="mt-3 text-xs text-gray-500">Failas bus atsisiųstas į jūsų įrenginį.</p>
+              <p className="mt-3 text-xs text-gray-500">{t('fileWillDownload')}</p>
             </div>
           </div>
         </Modal>

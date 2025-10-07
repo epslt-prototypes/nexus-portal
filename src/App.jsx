@@ -12,11 +12,15 @@ import Troubleshoot from './pages/Troubleshoot.jsx'
 import ClientPortal from './pages/ClientPortal.jsx'
 import ClientClaims from './pages/ClientClaims.jsx'
 import ClientHelp from './pages/ClientHelp.jsx'
+import ServicesEntry from './pages/ServicesEntry.jsx'
+import { Navigate } from 'react-router-dom'
 
 export default function App() {
   const location = useLocation()
   const isStandalone = location.pathname.startsWith('/troubleshoot')
+  const isLanding = location.pathname === '/'
   const isClientPortal = location.pathname.startsWith('/client')
+  const isPortal = location.pathname.startsWith('/portal')
 
   if (isStandalone) {
     return (
@@ -25,6 +29,18 @@ export default function App() {
           <Routes>
             <Route path="/troubleshoot" element={<Troubleshoot />} />
             {/* keep other routes reachable if someone navigates away programmatically */}
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+      </div>
+    )
+  }
+
+  if (isLanding) {
+    return (
+      <div className="min-h-screen bg-gray-900">
+        <main>
+          <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
         </main>
@@ -45,6 +61,27 @@ export default function App() {
     )
   }
 
+  if (isPortal) {
+    return (
+      <div className="min-h-screen bg-surface-muted">
+        <Topbar />
+        <div className="mx-auto flex max-w-6xl gap-6 px-4">
+          <Sidebar />
+          <main className="flex-1 py-6">
+            <Routes>
+              <Route path="/portal" element={<Navigate to="/portal/services-entry" replace />} />
+              <Route path="/portal/services-entry" element={<ServicesEntry />} />
+              <Route path="/portal/services" element={<ServicesList />} />
+              <Route path="/portal/status" element={<Status />} />
+              <Route path="/portal/acts" element={<Acts />} />
+              <Route path="/portal/receipts" element={<Receipts />} />
+            </Routes>
+          </main>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-surface-muted">
       <Topbar />
@@ -55,11 +92,11 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/services-entry" element={<Home />} />
-            <Route path="/services" element={<ServicesList />} />
-            <Route path="/status" element={<Status />} />
-            <Route path="/acts" element={<Acts />} />
-            <Route path="/receipts" element={<Receipts />} />
+            <Route path="/services-entry" element={<Navigate to="/portal/services-entry" replace />} />
+            <Route path="/services" element={<Navigate to="/portal/services" replace />} />
+            <Route path="/status" element={<Navigate to="/portal/status" replace />} />
+            <Route path="/acts" element={<Navigate to="/portal/acts" replace />} />
+            <Route path="/receipts" element={<Navigate to="/portal/receipts" replace />} />
             <Route path="/troubleshoot" element={<Troubleshoot />} />
           </Routes>
         </main>
