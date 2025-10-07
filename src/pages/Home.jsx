@@ -274,7 +274,7 @@ export default function Home() {
         <section className="py-6">
           <div className="grid gap-6">
             <Card className="p-8">
-              <h2 className="text-center text-2xl font-semibold text-gray-800">Apdraustojo sigmarnavimas</h2>
+              <h2 className="text-center text-2xl font-semibold text-gray-800">Apdraustojo aptarnavimas</h2>
               <div className="mt-6 border-t border-dashed" />
 
               <form onSubmit={handleSubmit(onSubmit)} className="mt-8 mx-auto max-w-xl">
