@@ -168,7 +168,7 @@ export default function ClientHelp() {
       <ClientTopNav theme={theme} onLogoClick={cycleTheme} />
 
       {/* Main Content */}
-      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 pb-4 md:pb-8 pb-24 md:pb-12 space-y-3 md:space-y-6">
+      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 pb-24 md:pb-12 space-y-3 md:space-y-6">
         <PageHeader
           title="Help"
           subtitle="See your policy and contact support"
