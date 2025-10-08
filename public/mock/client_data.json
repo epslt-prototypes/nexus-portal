@@ -8,8 +8,9 @@
   },
   "insuranceBalance": {
     "totalLimit": 5000.00,
-    "usedAmount": 1250.75,
-    "remainingAmount": 3749.25,
+    "confirmedAmount": 1250.75,
+    "pendingAmount": 75.00,
+    "remainingAmount": 3674.25,
     "currency": "EUR",
     "renewalDate": "2026-01-01"
   },
@@ -75,41 +76,71 @@
       "date": "2024-01-20",
       "amount": 75.00,
       "status": "processing",
-      "description": "Physical therapy session",
+      "description": "Physical therapy session for lower back pain treatment. Attended 60-minute session with licensed physiotherapist focusing on core strengthening exercises and manual therapy techniques.",
       "category": "Rehabilitation",
-      "submittedDate": "2024-01-21"
+      "submittedDate": "2024-01-21",
+      "receiptNumber": "RCP-2024-007",
+      "attachments": [
+        {
+          "name": "physical_therapy_receipt.pdf",
+          "type": "application/pdf",
+          "size": 245760
+        },
+        {
+          "name": "therapy_session_notes.jpg",
+          "type": "image/jpeg",
+          "size": 1024000
+        },
+        {
+          "name": "doctor_referral_letter.pdf",
+          "type": "application/pdf",
+          "size": 189440
+        }
+      ]
     }
   ],
   "coverageDetails": {
     "medicalConsultations": {
       "limit": 500.00,
-      "used": 245.50,
+      "confirmed": 245.50,
+      "pending": 0.00,
       "remaining": 254.50
     },
     "prescriptionDrugs": {
       "limit": 1000.00,
-      "used": 120.00,
+      "confirmed": 120.00,
+      "pending": 0.00,
       "remaining": 880.00
     },
     "diagnosticTests": {
       "limit": 800.00,
-      "used": 85.25,
+      "confirmed": 85.25,
+      "pending": 0.00,
       "remaining": 714.75
     },
     "dentalCare": {
       "limit": 300.00,
-      "used": 200.00,
+      "confirmed": 200.00,
+      "pending": 0.00,
       "remaining": 100.00
     },
     "emergencyCare": {
       "limit": 2000.00,
-      "used": 500.00,
+      "confirmed": 500.00,
+      "pending": 0.00,
       "remaining": 1500.00
     },
     "specialistCare": {
       "limit": 1000.00,
-      "used": 300.00,
+      "confirmed": 300.00,
+      "pending": 0.00,
       "remaining": 700.00
+    },
+    "rehabilitation": {
+      "limit": 600.00,
+      "confirmed": 0.00,
+      "pending": 75.00,
+      "remaining": 525.00
     }
   }
 }

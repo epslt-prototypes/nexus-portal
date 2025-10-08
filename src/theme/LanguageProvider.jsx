@@ -93,7 +93,6 @@ const dictionaries = {
     of: 'iš',
     servicesWord: 'paslaugų',
     import: 'Importuoti',
-    print: 'Spausdinti',
     // Status page
     servicesStatusTitle: 'Paslaugų būsena',
     status: 'Būsena',
@@ -125,7 +124,6 @@ const dictionaries = {
     receiptCreatedAt: 'Kvito formavimo data',
     insuredDue: 'Apdraustojo mokėtina suma (EUR)',
     printReceipt: 'Spausdinti čekį',
-    print: 'Spausdinti',
     noRecords: 'Įrašų nerasta pagal pasirinktus filtrus',
     exportReceipt: 'Eksportuoti kvitą',
     cancelAction: 'Atšaukti',
@@ -138,7 +136,6 @@ const dictionaries = {
     fileWillDownload: 'Failas bus atsisiųstas į jūsų įrenginį.',
     // Acts page
     actsTitle: 'Apmokėjimo aktai',
-    close: 'Uždaryti',
     search: 'Ieškoti',
     searchPlaceholderActs: 'Ieškoti pagal bet kurį lauką...',
     claimActNumber: 'Reikalavimo akto Nr.',
@@ -243,7 +240,6 @@ const dictionaries = {
     of: 'of',
     servicesWord: 'services',
     import: 'Import',
-    print: 'Print',
     // Status page
     servicesStatusTitle: 'Services status',
     status: 'Status',
@@ -275,7 +271,6 @@ const dictionaries = {
     receiptCreatedAt: 'Receipt created at',
     insuredDue: 'Insurer due (EUR)',
     printReceipt: 'Print receipt',
-    print: 'Print',
     noRecords: 'No records match the selected filters',
     exportReceipt: 'Export receipt',
     cancelAction: 'Cancel',
@@ -288,7 +283,6 @@ const dictionaries = {
     fileWillDownload: 'The file will be downloaded to your device.',
     // Acts page
     actsTitle: 'Payment acts',
-    close: 'Close',
     search: 'Search',
     searchPlaceholderActs: 'Search across any field...',
     claimActNumber: 'Claim act No.',

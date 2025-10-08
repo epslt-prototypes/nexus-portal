@@ -4,7 +4,7 @@ export default function PageHeader({ title, subtitle, rightContent = null }) {
   return (
     <>
       {/* Mobile */}
-      <div className="text-center md:hidden">
+      <div className="text-center md:hidden pt-2">
         <h1 className="text-base font-semibold text-gray-900">{title}</h1>
         {subtitle && (
           <p className="text-sm text-gray-600">{subtitle}</p>

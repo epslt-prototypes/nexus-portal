@@ -9,6 +9,7 @@ import ClientBottomNav from '../components/ClientBottomNav'
 import Tabs from '../components/Tabs'
 import PageHeader from '../components/PageHeader'
 import ClaimCard from '../components/ClaimCard'
+import ClaimDetailsModal from '../components/ClaimDetailsModal'
 import Modal from '../components/Modal'
 
 export default function ClientClaims() {
@@ -154,7 +155,7 @@ export default function ClientClaims() {
       <ClientTopNav theme={theme} onLogoClick={cycleTheme} />
 
       {/* Main Content */}
-      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 pb-4 md:pb-8 pb-28 md:pb-12 space-y-3 md:space-y-6">
+      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 pb-4 md:pb-8 pb-24 md:pb-12 space-y-3 md:space-y-6">
           <PageHeader
           title="Claims"
           subtitle="Manage your claims and view payouts"
@@ -256,61 +257,15 @@ export default function ClientClaims() {
       </div>
 
       {/* Claim details modal */}
-      <Modal
-        open={isModalOpen}
+      <ClaimDetailsModal
+        isOpen={isModalOpen}
         onClose={() => { setIsModalOpen(false); setSelectedClaim(null) }}
-        title={selectedClaim ? (selectedClaim.description || 'Claim details') : ''}
-        size="lg"
-      >
-        {selectedClaim && (
-          <div className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <div className="text-xs text-gray-500">Category</div>
-                <div className="text-gray-900">{selectedClaim.category || '—'}</div>
-              </div>
-              <div className="text-right">
-                <div className="text-xs text-gray-500">Amount</div>
-                <div className="text-gray-900">{formatCurrency(selectedClaim.amount)}</div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <div className="text-xs text-gray-500">Date</div>
-                <div className="text-gray-900">{formatDate(selectedClaim.date)}</div>
-              </div>
-              <div className="text-right">
-                <div className="text-xs text-gray-500">Status</div>
-                <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(selectedClaim.status)}`}>
-                  {getStatusText(selectedClaim.status)}
-                </span>
-              </div>
-            </div>
-
-            {selectedClaim.submittedDate && (
-              <div>
-                <div className="text-xs text-gray-500">Submitted</div>
-                <div className="text-gray-900">{formatDate(selectedClaim.submittedDate)}</div>
-              </div>
-            )}
-
-            {selectedClaim.receiptNumber && (
-              <div>
-                <div className="text-xs text-gray-500">Receipt</div>
-                <div className="text-gray-900 break-words">{selectedClaim.receiptNumber}</div>
-              </div>
-            )}
-
-            {selectedClaim.description && (
-              <div>
-                <div className="text-xs text-gray-500">Description</div>
-                <div className="text-gray-900 whitespace-pre-wrap break-words">{selectedClaim.description}</div>
-              </div>
-            )}
-          </div>
-        )}
-      </Modal>
+        claim={selectedClaim}
+        formatCurrency={formatCurrency}
+        formatDate={formatDate}
+        getStatusColor={getStatusColor}
+        getStatusText={getStatusText}
+      />
 
       {/* New Claim modal */}
       <Modal
@@ -378,10 +333,19 @@ export default function ClientClaims() {
                 className={`w-full h-10 rounded-lg border px-3 text-sm ${errors.category ? 'border-red-300 ring-1 ring-red-200' : 'border-gray-300'}`}
               >
                 <option value="">Select...</option>
-                <option value="Medical">Medical</option>
-                <option value="Travel">Travel</option>
-                <option value="Property">Property</option>
-                <option value="Other">Other</option>
+                {clientData?.coverageDetails && Object.keys(clientData.coverageDetails).map((coverageKey) => {
+                  // Convert coverage key to display name
+                  const displayName = coverageKey
+                    .replace(/([A-Z])/g, ' $1') // Add space before capital letters
+                    .replace(/^./, str => str.toUpperCase()) // Capitalize first letter
+                    .trim();
+                  
+                  return (
+                    <option key={coverageKey} value={displayName}>
+                      {displayName}
+                    </option>
+                  );
+                })}
               </select>
               {errors.category && <span className="mt-1 block text-xs text-red-600">{errors.category}</span>}
             </div>

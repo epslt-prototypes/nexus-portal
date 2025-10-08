@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { ThemeContext } from '../theme/ThemeProvider'
 import Card from '../components/Card'
@@ -10,6 +10,8 @@ import PageHeader from '../components/PageHeader'
 
 export default function ClientHelp() {
   const [activeSection, setActiveSection] = useState('faq')
+  const [clientData, setClientData] = useState(null)
+  const [loading, setLoading] = useState(true)
   const { theme, setTheme } = useContext(ThemeContext)
 
   const cycleTheme = () => {
@@ -18,6 +20,21 @@ export default function ClientHelp() {
     const next = order[(idx + 1) % order.length]
     setTheme(next)
   }
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await fetch('/mock/client_data.json')
+        const data = await res.json()
+        setClientData(data)
+      } catch (e) {
+        console.error('Failed to load client mock:', e)
+      } finally {
+        setLoading(false)
+      }
+    }
+    load()
+  }, [])
 
   const faqData = [
     {
@@ -106,6 +123,29 @@ export default function ClientHelp() {
     }
   ]
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-surface-muted flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-primary mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!clientData) {
+    return (
+      <div className="min-h-screen bg-surface-muted flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600">Unable to load your information. Please try again later.</p>
+        </div>
+      </div>
+    )
+  }
+
+  const { client } = clientData
+
   return (
     <div className="min-h-screen bg-surface-muted">
       {/* Mobile Header */}
@@ -118,7 +158,8 @@ export default function ClientHelp() {
               </div>
             </div>
             <div className="text-right">
-              <p className="text-xs text-gray-500">Help & Support</p>
+              <p className="text-xs text-gray-500">Policy</p>
+              <p className="text-sm font-medium text-gray-900">{client.policyNumber}</p>
             </div>
           </div>
         </div>
@@ -127,7 +168,7 @@ export default function ClientHelp() {
       <ClientTopNav theme={theme} onLogoClick={cycleTheme} />
 
       {/* Main Content */}
-      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 pb-4 md:pb-8 pb-28 md:pb-12 space-y-3 md:space-y-6">
+      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 pb-4 md:pb-8 pb-24 md:pb-12 space-y-3 md:space-y-6">
         <PageHeader
           title="Help"
           subtitle="See your policy and contact support"
