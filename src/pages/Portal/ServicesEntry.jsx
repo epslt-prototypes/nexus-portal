@@ -1,13 +1,13 @@
-import Card from '../components/Card.jsx'
-import Button from '../components/Button.jsx'
-import Modal from '../components/Modal.jsx'
-import { FloatingInput, Checkbox } from '../components/Inputs.jsx'
+import Card from '../../components/Card.jsx'
+import Button from '../../components/Button.jsx'
+import Modal from '../../components/Modal.jsx'
+import { FloatingInput, Checkbox } from '../../components/Inputs.jsx'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useMemo, useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
-import { PinGroup } from '../components/Inputs.jsx'
-import { useI18n } from '../theme/LanguageProvider'
+import { PinGroup } from '../../components/Inputs.jsx'
+import { useI18n } from '../../theme/LanguageProvider'
 
 export default function ServicesEntry() {
   const { t } = useI18n()

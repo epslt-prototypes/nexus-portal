@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Card from '../components/Card'
-import Button from '../components/Button'
-import Modal from '../components/Modal'
+import Card from '../../components/Card'
+import Button from '../../components/Button'
+import Modal from '../../components/Modal'
 import { Eye, EyeOff } from 'lucide-react'
-import { useI18n } from '../theme/LanguageProvider'
+import { useI18n } from '../../theme/LanguageProvider'
 
 export default function Settings() {
   const { t, lang, setLang } = useI18n()

@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
-import { ThemeContext } from '../theme/ThemeProvider'
-import Card from '../components/Card'
-import InsurerLogoButton from '../components/InsurerLogoButton'
-import ClientBottomNav from '../components/ClientBottomNav'
-import ClientTopNav from '../components/ClientTopNav'
-import Tabs from '../components/Tabs'
-import PageHeader from '../components/PageHeader'
+import { ThemeContext } from '../../theme/ThemeProvider'
+import Card from '../../components/Card'
+import InsurerLogoButton from '../../components/InsurerLogoButton'
+import ClientBottomNav from '../../components/ClientBottomNav'
+import ClientTopNav from '../../components/ClientTopNav'
+import Tabs from '../../components/Tabs'
+import PageHeader from '../../components/PageHeader'
 
 export default function ClientHelp() {
   const [activeSection, setActiveSection] = useState('faq')

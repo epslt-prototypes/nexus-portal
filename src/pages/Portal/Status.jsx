@@ -1,9 +1,9 @@
-import Card from '../components/Card.jsx'
-import Button from '../components/Button.jsx'
-import { Select, DateInput } from '../components/Inputs.jsx'
-import Modal from '../components/Modal.jsx'
+import Card from '../../components/Card.jsx'
+import Button from '../../components/Button.jsx'
+import { Select, DateInput } from '../../components/Inputs.jsx'
+import Modal from '../../components/Modal.jsx'
 import React, { useMemo, useState } from 'react'
-import { useI18n } from '../theme/LanguageProvider'
+import { useI18n } from '../../theme/LanguageProvider'
 
 export default function Status() {
   const { t } = useI18n()

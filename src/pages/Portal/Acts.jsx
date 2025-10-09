@@ -1,9 +1,9 @@
-import Card from '../components/Card.jsx'
-import Button from '../components/Button.jsx'
-import Modal from '../components/Modal.jsx'
-import { DateInput, Input } from '../components/Inputs.jsx'
+import Card from '../../components/Card.jsx'
+import Button from '../../components/Button.jsx'
+import Modal from '../../components/Modal.jsx'
+import { DateInput, Input } from '../../components/Inputs.jsx'
 import React, { useEffect, useMemo, useState } from 'react'
-import { useI18n } from '../theme/LanguageProvider'
+import { useI18n } from '../../theme/LanguageProvider'
 import { Printer, FileText, FileDown, FileSpreadsheet } from 'lucide-react'
 // Load acts from public/mock at runtime
 

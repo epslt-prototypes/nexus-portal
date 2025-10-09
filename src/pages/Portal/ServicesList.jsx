@@ -1,8 +1,8 @@
-import Card from '../components/Card.jsx'
-import Button from '../components/Button.jsx'
-import { Select, Input } from '../components/Inputs.jsx'
+import Card from '../../components/Card.jsx'
+import Button from '../../components/Button.jsx'
+import { Select, Input } from '../../components/Inputs.jsx'
 import { useEffect, useMemo, useState } from 'react'
-import { useI18n } from '../theme/LanguageProvider'
+import { useI18n } from '../../theme/LanguageProvider'
 
 export default function ServicesList() {
   const { t, lang } = useI18n()

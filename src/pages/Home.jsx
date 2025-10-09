@@ -27,8 +27,8 @@ export default function Home() {
           </div>
 
           <div className="rounded-xl border border-gray-400/40 bg-gray-600/20 p-6 shadow-lg">
-            <h2 className="text-xl font-semibold">Client</h2>
-            <p className="mt-2 text-gray-400">Client-facing policy and claims overview.</p>
+            <h2 className="text-xl font-semibold">Direct</h2>
+            <p className="mt-2 text-gray-400">Mobile-first client-facing policy and claims overview.</p>
             <div className="mt-5">
               <Link
                 to="/client"

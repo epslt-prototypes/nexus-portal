@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { RadioGroup, NumberInput } from '../components/Inputs'
+import { RadioGroup, NumberInput } from '../../components/Inputs'
 
 export default function Troubleshoot() {
   const [tlkUsed, setTlkUsed] = useState('no') // yes | no

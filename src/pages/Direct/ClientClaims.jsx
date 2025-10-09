@@ -1,16 +1,16 @@
 import { useState, useEffect, useContext, useMemo } from 'react'
 // Runtime fetch from public/mock per project policy (no src/mock imports)
-import ClientTopNav from '../components/ClientTopNav'
+import ClientTopNav from '../../components/ClientTopNav'
 import { useLocation } from 'react-router-dom'
-import { ThemeContext } from '../theme/ThemeProvider'
-import Card from '../components/Card'
-import InsurerLogoButton from '../components/InsurerLogoButton'
-import ClientBottomNav from '../components/ClientBottomNav'
-import Tabs from '../components/Tabs'
-import PageHeader from '../components/PageHeader'
-import ClaimCard from '../components/ClaimCard'
-import ClaimDetailsModal from '../components/ClaimDetailsModal'
-import Modal from '../components/Modal'
+import { ThemeContext } from '../../theme/ThemeProvider'
+import Card from '../../components/Card'
+import InsurerLogoButton from '../../components/InsurerLogoButton'
+import ClientBottomNav from '../../components/ClientBottomNav'
+import Tabs from '../../components/Tabs'
+import PageHeader from '../../components/PageHeader'
+import ClaimCard from '../../components/ClaimCard'
+import ClaimDetailsModal from '../../components/ClaimDetailsModal'
+import Modal from '../../components/Modal'
 
 export default function ClientClaims() {
   const [clientData, setClientData] = useState(null)
