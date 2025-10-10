@@ -1,13 +1,18 @@
-import Card from '../../components/Card.jsx'
 import Button from '../../components/Button.jsx'
 import Modal from '../../components/Modal.jsx'
 import { DateInput, Input } from '../../components/Inputs.jsx'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useI18n } from '../../theme/LanguageProvider'
 import { Printer, FileText, FileDown, FileSpreadsheet } from 'lucide-react'
+import { usePageTitle } from '../../theme/PageTitleProvider'
 
 export default function Receipts() {
   const { t } = useI18n()
+  const { setTitle } = usePageTitle()
+  useEffect(() => {
+    setTitle(t('receiptsTitle'))
+    return () => setTitle('')
+  }, [t, setTitle])
   const [receipts] = useState([
     {
       id: 'r-009000009390',
@@ -58,11 +63,8 @@ export default function Receipts() {
   }, [receipts, receiptNumber, dateFrom, dateTo])
 
   return (
-    <section className="py-6">
-      <div className="grid gap-6">
-        <Card className="p-6">
-          <h2 className="text-2xl font-semibold text-gray-800">{t('receiptsTitle')}</h2>
-          <div className="mt-6 border-t border-dashed" />
+    <div className="px-6 pt-6">
+          
 
           <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:gap-3">
             <Input
@@ -166,9 +168,7 @@ export default function Receipts() {
               </div>
             </div>
           </Modal>
-        </Card>
-      </div>
-    </section>
+    </div>
   )
 }
 

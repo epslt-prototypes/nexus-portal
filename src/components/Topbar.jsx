@@ -1,6 +1,8 @@
 import { Fragment } from 'react'
 import { Menu, MenuButton, MenuItems, MenuItem, Transition } from '@headlessui/react'
 import { useContext } from 'react'
+import { useLocation } from 'react-router-dom'
+import { usePageTitle } from '../theme/PageTitleProvider'
 import { ThemeContext } from '../theme/ThemeProvider'
 import { Umbrella, Bell, User, ChevronDown } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
@@ -11,7 +13,24 @@ import { useI18n } from '../theme/LanguageProvider'
 export default function Topbar() {
   const { t } = useI18n()
   const { theme, setTheme } = useContext(ThemeContext)
-  const clinicName = 'UAB "SVEIKATA"'
+  const location = useLocation()
+  const { title: contextualTitle } = usePageTitle()
+
+  const getPageTitle = () => {
+    const path = location.pathname
+    // Portal routes
+    if (path.startsWith('/portal')) {
+      if (path.startsWith('/portal/services-entry')) return t('servicesNew')
+      if (path.startsWith('/portal/services')) return t('servicesCatalog')
+      if (path.startsWith('/portal/status')) return t('servicesStatus')
+      if (path.startsWith('/portal/acts')) return t('actsPayments')
+      if (path.startsWith('/portal/receipts')) return t('servicesReceipts')
+      return 'Portal'
+    }
+    if (path.startsWith('/settings')) return t('settings')
+    if (path === '/' ) return 'Home'
+    return ''
+  }
 
   const cycleTheme = () => {
     const order = ['BTA', 'LD', 'ERGO', 'COMPENSA']
@@ -21,15 +40,16 @@ export default function Topbar() {
   }
   return (
     <header className="sticky top-0 z-40 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="grid h-14 items-center grid-cols-[1fr_auto_1fr]">
+      <div className="w-full max-w-none px-4">
+        <div className="grid h-20 items-center grid-cols-[1fr_auto_1fr]">
           <div className="flex items-center gap-3 justify-self-start">
+            <h1 className="text-base sm:text-lg md:text-2xl font-semibold leading-tight truncate max-w-[60vw]">
+              {contextualTitle || getPageTitle()}
+            </h1>
+          </div>
+          <div className="justify-self-center">
             <InsurerLogoButton theme={theme} onClick={cycleTheme} />
           </div>
-          <div className="text-sm leading-tight justify-self-center text-center">
-              <div className="font-semibold">{clinicName}</div>
-              <div className="text-xs text-gray-500">Vilniaus g. 10, Vilnius</div>
-            </div>
           <div className="flex items-center gap-2 justify-self-end">
             <Menu as="div" className="relative inline-block text-left">
               <MenuButton aria-label={t('notifications')} className="focus-ring relative inline-flex h-10 w-10 items-center justify-center rounded-lg border bg-white text-gray-600 hover:bg-gray-50" title={t('notifications')}>
@@ -71,7 +91,7 @@ export default function Topbar() {
                       <button
                         type="button"
                         onClick={() => { try { localStorage.clear(); sessionStorage.clear(); } catch {} window.location.href = '/' }}
-                        className={`w-full text-left block rounded-md px-3 py-2 text-sm text-red-600 ${active ? 'bg-red-50' : ''}`}
+                        className={`w-full text-left block rounded-md px-3 py- text-sm text-red-600 ${active ? 'bg-red-50' : ''}`}
                       >
                         {t('logout')}
                       </button>

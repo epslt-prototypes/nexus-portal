@@ -1,4 +1,3 @@
-import Card from '../../components/Card.jsx'
 import Button from '../../components/Button.jsx'
 import Modal from '../../components/Modal.jsx'
 import { FloatingInput, Checkbox } from '../../components/Inputs.jsx'
@@ -8,9 +7,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useMemo, useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
 import { PinGroup } from '../../components/Inputs.jsx'
 import { useI18n } from '../../theme/LanguageProvider'
+import { usePageTitle } from '../../theme/PageTitleProvider'
 
 export default function ServicesEntry() {
   const { t } = useI18n()
+  const { setTitle } = usePageTitle()
+  const insuredName = 'Tomas Meškutavičius'
   const [katalogas, setKatalogas] = useState([])
 
   useEffect(() => {
@@ -44,6 +46,10 @@ export default function ServicesEntry() {
       return false
     }
   })
+  useEffect(() => {
+    setTitle(authorized ? insuredName : t('insuredService'))
+    return () => setTitle('')
+  }, [authorized, t, setTitle])
   const [cardData, setCardData] = useState({
     cardNumber: '944039580000000000',
     personalCode: '47912121010'
@@ -272,13 +278,10 @@ export default function ServicesEntry() {
   }
 
   return (
-    <div>
+    <div className="px-6 pt-6">
       {!authorized ? (
-        <section className="py-6">
-          <div className="grid gap-6">
-            <Card className="p-8">
-              <h2 className="text-center text-2xl font-semibold text-gray-800">{t('insuredService')}</h2>
-              <div className="mt-6 border-t border-dashed" />
+        <div>
+            <div className="p-0">
 
               <form onSubmit={handleSubmit(onSubmit)} className="mt-8 mx-auto max-w-xl">
                 <div>
@@ -304,13 +307,10 @@ export default function ServicesEntry() {
                   <Button ref={submitRef} type="submit">{t('authorize')}</Button>
                 </div>
               </form>
-            </Card>
-          </div>
-        </section>
+            </div>
+        </div>
       ) : (
-        <section className="py-6">
-          <div className="grid gap-6">
-            <Card className="p-6">
+        <div>
               <div className="grid grid-cols-1 gap-4 text-sm text-gray-700 md:grid-cols-2">
                 <div className="grid grid-cols-2 gap-2">
                   <div className="text-gray-500">{t('cardNumber')}</div>
@@ -775,9 +775,7 @@ export default function ServicesEntry() {
                   <Button variant="secondary" onClick={() => setBalancesModalOpen(false)}>{t('close')}</Button>
                 </div>
               </Modal>
-            </Card>
-          </div>
-        </section>
+        </div>
       )}
     </div>
   )

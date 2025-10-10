@@ -1,12 +1,17 @@
-import Card from '../../components/Card.jsx'
 import Button from '../../components/Button.jsx'
 import { Select, DateInput } from '../../components/Inputs.jsx'
 import Modal from '../../components/Modal.jsx'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useI18n } from '../../theme/LanguageProvider'
+import { usePageTitle } from '../../theme/PageTitleProvider'
 
 export default function Status() {
   const { t } = useI18n()
+  const { setTitle } = usePageTitle()
+  useEffect(() => {
+    setTitle(t('servicesStatusTitle'))
+    return () => setTitle('')
+  }, [t, setTitle])
   function parseEur(value) {
     if (value == null) return 0
     const normalized = String(value).replace(/\s/g, '').replace(',', '.')
@@ -142,11 +147,7 @@ export default function Status() {
   
 
   return (
-    <section className="py-6">
-      <div className="grid gap-6">
-        <Card className="p-6">
-          <h2 className="text-2xl font-semibold text-gray-800">{t('servicesStatusTitle')}</h2>
-          <div className="mt-6 border-t border-dashed" />
+    <div className="px-6 pt-6">
           <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:gap-3">
             <div className="relative w-full flex-1">
               <label className="mb-1 block text-sm font-medium text-gray-700">{t('status')}</label>
@@ -446,10 +447,7 @@ export default function Status() {
               </div>
             )}
           </Modal>
-
-        </Card>
-      </div>
-    </section>
+    </div>
   )
 }
 

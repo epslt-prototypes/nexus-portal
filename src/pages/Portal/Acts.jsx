@@ -1,14 +1,15 @@
-import Card from '../../components/Card.jsx'
 import Button from '../../components/Button.jsx'
 import Modal from '../../components/Modal.jsx'
 import { DateInput, Input } from '../../components/Inputs.jsx'
 import React, { useEffect, useMemo, useState } from 'react'
 import { useI18n } from '../../theme/LanguageProvider'
+import { usePageTitle } from '../../theme/PageTitleProvider'
 import { Printer, FileText, FileDown, FileSpreadsheet } from 'lucide-react'
 // Load acts from public/mock at runtime
 
 export default function Acts() {
   const { t } = useI18n()
+  const { setTitle } = usePageTitle()
   function parseEur(value) {
     if (value == null) return 0
     const normalized = String(value).replace(/\s/g, '').replace(',', '.')
@@ -125,16 +126,16 @@ export default function Acts() {
   }, [acts, dateFrom, dateTo, searchQuery])
 
   const [selectedAct, setSelectedAct] = useState(null)
+  useEffect(() => {
+    setTitle(selectedAct ? selectedAct.number : t('actsTitle'))
+  }, [selectedAct, t, setTitle])
   const [hoveredServiceId, setHoveredServiceId] = useState(null)
   const [printOpen, setPrintOpen] = useState(false)
 
   return (
-    <section className="py-6">
-      <div className="grid gap-6">
-        <Card className="p-6">
-          <div className="flex items-start">
-            <h2 className="text-2xl font-semibold text-gray-800">{selectedAct ? selectedAct.number : t('actsTitle')}</h2>
-            {selectedAct && (
+    <div className="px-6 pt-6 h-full flex flex-col">
+          {selectedAct && (
+            <div className="flex items-start">
               <div className="ml-auto">
                 <button
                   type="button"
@@ -144,9 +145,8 @@ export default function Acts() {
                   {t('close')}
                 </button>
               </div>
-            )}
-          </div>
-          <div className="mt-6 border-t border-dashed" />
+            </div>
+          )}
 
           {!selectedAct && (
             <>
@@ -172,7 +172,7 @@ export default function Acts() {
                 </div>
               </div>
 
-              <div className="mt-4 overflow-x-auto overflow-y-hidden rounded-lg border">
+              <div className="mt-4 flex-1 min-h-0 overflow-auto rounded-lg border">
                 <table className="w-full table-auto text-sm">
                   <thead className="bg-gray-50 text-xs font-medium text-gray-600">
                     <tr>
@@ -237,7 +237,7 @@ export default function Acts() {
                 <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-red-500" /> {t('rejected')}</div>
               </div>
 
-              <div className="mt-2 overflow-x-auto overflow-y-hidden rounded-lg border">
+              <div className="mt-2 max-h-[50vh] overflow-auto rounded-lg border">
                 <table className="w-full table-auto text-sm">
                   <thead className="bg-gray-50 text-xs font-medium text-gray-600">
                     <tr>
@@ -384,8 +384,7 @@ export default function Acts() {
               </div>
             </>
           )}
-        </Card>
-
+        
         <Modal
           open={printOpen}
           onClose={() => setPrintOpen(false)}
@@ -439,7 +438,6 @@ export default function Acts() {
           </div>
         </Modal>
     </div>
-    </section>
   )
 }
 
