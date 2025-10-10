@@ -523,6 +523,23 @@ const SearchInput = forwardRef(function SearchInput({
   )
 })
 
+// Table Input Component - specifically for inline table editing
+const TableInput = forwardRef(function TableInput({ 
+  className = '', 
+  ...props 
+}, ref) {
+  return (
+    <input
+      ref={ref}
+      className={clsx(
+        'w-full bg-transparent border-none outline-none text-inherit placeholder:text-gray-400 focus:outline-none focus:ring-0 focus:border-none',
+        className
+      )}
+      {...props}
+    />
+  )
+})
+
 export {
   Input,
   FloatingInput,
@@ -536,7 +553,8 @@ export {
   NumberInput,
   EmailInput,
   PasswordInput,
-  SearchInput
+  SearchInput,
+  TableInput
 }
 
 export default Input

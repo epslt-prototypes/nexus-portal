@@ -13,7 +13,7 @@ export default function PortalLayout() {
               <div className="px-6">
                 {/* Child pages should render their own titles */}
               </div>
-              <div className="flex-1 min-h-0 px-6 pb-6">
+              <div className="flex-1 min-h-0">
                 <div className="h-full overflow-auto">
                   <Outlet />
                 </div>
